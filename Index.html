@@ -5,35 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AutoKarol</title>
+    <link rel="stylesheet" href="Styles.css" />
+    <script src="Script.js"></script>
   </head>
   <body>
-    <header><h1>Po prostu wybierz swoje auto!</h1></header>
     <nav>
-      <button id="listaAut">
-        <a href="Index.html" target="_blank">Nasze auta</a>
-      </button>
-            <button id="about">
-        <a href="#">O nas</a>
-      </button>
-            <button id="contact">
-        <a href="#">Kontakt</a>
-      </button>
-            </button>
-            <button id="pytania">
-        <a href="#">Często zadawane pytania</a>
-      </button>
-    </nav>
-    <main></main>
-    <div class="auta">
-      <div id="Audi">
-        <img src="#" />
-        <p>Marka, Model</p>
-        <p>Rok produkcji</p>
-        <p>Moc silnika</p>
-        <p>Przebieg</p>
-        <p>Cena</p>
+      <label id="logo">AutoKar</label>
+      <ul id="navbar">
+        <li class="navbarItem">
+          <a href="Index.html" class="link">Nasze auta</a>
+        </li>
+        <li class="navbarItem"><a href="#" class="link">O nas</a></li>
+        <li class="navbarItem"><a href="#" class="link">Kontakt</a></li>
+        <li class="navbarItem">
+          <a href="#" class="link">Często zadawane pytania</a>
+        </li>
+      </ul>
+      <div id="search">
+        <input type="text" placeholder="Wyszukaj na stronie" /><button
+          id="searchBtn"
+        >
+          *Ikonka lupy*
+        </button>
       </div>
-    </div>
-    <footer></footer>
+    </nav>
+    <main>
+      <div id="carList">
+        <div class="carItem Audi">
+          <img src="#" />
+          <p>Audi TT</p>
+          <p>2000</p>
+          <p>500 km</p>
+          <p>200 000 km</p>
+          <p>15 000 PLN</p>
+        </div>
+        <div class="carItem Peugeot">
+          <img src="#" />
+          <p>Peugeot 406</p>
+          <p>1998</p>
+          <p>115 km</p>
+          <p>250 000 km</p>
+          <p>15 000 PLN</p>
+        </div>
+      </div>
+    </main>
+    <footer>Copyright 2023</footer>
   </body>
 </html>

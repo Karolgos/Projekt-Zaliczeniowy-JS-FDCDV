@@ -30,9 +30,9 @@
       <div id="search">
         <input
           type="text"
-          placeholder="Wyszukaj na stronie"
+          placeholder="Wyszukaj po marce"
           id="searchInput"
-        /><button id="searchBtn">*Ikonka lupy*</button>
+        /><button id="searchBtn"></button>
         <label for="searchBtn" id="searchIcon"
           ><i class="fa-solid fa-magnifying-glass"></i
         ></label>
@@ -40,24 +40,138 @@
     </nav>
     <main>
       <div id="carList">
-        <div class="carItem Audi">
-          <img src="#" />
-          <p>Audi TT</p>
-          <p>2000</p>
-          <p>500 km</p>
-          <p>200 000 km</p>
-          <p>15 000 PLN</p>
+        <div class="carItem">
+          <img src="/img/Rs6 Avant.jpg" />
+          <span class="carSpecs"
+            ><h2>Audi RS6 Avant</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2015</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 560 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 158 600 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>249 900 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
         </div>
-        <div class="carItem Peugeot">
-          <img src="#" />
-          <p>Peugeot 406</p>
-          <p>1998</p>
-          <p>115 km</p>
-          <p>250 000 km</p>
-          <p>15 000 PLN</p>
+        <div class="carItem">
+          <img src="/img/407.jpg" />
+          <span class="carSpecs"
+            ><h2>Peugeot 407</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2006</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 163 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 184 200 km</li>
+            </ul></span
+          >
+          <h3 class="carPrice">18 999 PLN</h3>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Focus.jpg" />
+          <span class="carSpecs"
+            ><h2>Ford Focus Hatchback</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2015</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 120 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 135 000 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>40 959 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Fiat 500.jpg" />
+          <span class="carSpecs"
+            ><h2>Fiat 500</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2012</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 69 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 72 000 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>30 500 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItemSold">
+          <img src="/img/Mini Cooper.jpg" />
+          <span class="carSpecs"
+            ><h2>Mini Cooper *NIEAKTUALNE*</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2013</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 122 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 90 000 km</li>
+            </ul></span
+          >
+          <span class="carPriceSold"><h3>38 900 PLN</h3></span>
+          <button class="buyBtnSold">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Opel Astra.jpg" />
+          <span class="carSpecs"
+            ><h2>Opel Astra</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2014</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 95 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 198 000 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>30 900 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Citroen 2CV.jpg" />
+          <span class="carSpecs"
+            ><h2>Citroën 2CV *UNIKAT*</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 1979</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 29 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 88 000 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>94 000 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItemSold">
+          <img src="/img/Mazda rx7.jpg" />
+          <span class="carSpecs"
+            ><h2>Mazda Rx-7 *NIEAKTUALNE*</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 1999</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 276 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 92 000 km</li>
+            </ul></span
+          >
+          <span class="carPriceSold"><h3>120 000 PLN</h3></span>
+          <button class="buyBtnSold">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Lotus Elise.jpg" />
+          <span class="carSpecs"
+            ><h2>Lotus Elise 111 R</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2004</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 192 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 96 049 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>69 900 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
+        </div>
+        <div class="carItem">
+          <img src="/img/Lexus ES.jpg" />
+          <span class="carSpecs"
+            ><h2>Lexus ES</h2>
+            <ul>
+              <li><i class="fa-solid fa-calendar"></i></i> 2021</li>
+              <li><i class="fa-solid fa-gauge-high"></i> 218 KM</li>
+              <li><i class="fa-solid fa-truck-arrow-right"></i> 29 334 km</li>
+            </ul></span
+          >
+          <span class="carPrice"><h3>199 999 PLN</h3></span>
+          <button class="buyBtn">Wybierz</button>
         </div>
       </div>
     </main>
-    <footer>Copyright 2023</footer>
+    <footer>&copy Copyright 2023</footer>
   </body>
 </html>

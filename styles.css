@@ -87,20 +87,97 @@ nav {
 }
 
 #carList {
+  width: 80%;
   display: flex;
   flex-direction: column;
-  margin: 50px 100px 50px 25px;
+  margin: 50px 200px 50px 75px;
   row-gap: 20px;
 }
 
-.carItem {
-  flex-direction: row;
-  align-items: flex-start;
+.carItem,
+.carItemSold {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   border: 1px solid black;
+  padding: 10px;
+}
+
+.carItemSold {
+  opacity: 50%;
+}
+
+.carItem ul li,
+.carItemSold ul li {
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+.carItem img,
+.carItemSold img {
+  max-width: 250px;
+  max-height: 250px;
+  grid-column: 1;
+}
+
+.carSpecs {
+  grid-column: 2;
+  line-height: 37px;
+  color: rgb(54, 54, 54);
+}
+
+.carSpecs:hover {
+  cursor: default;
+}
+
+.carSpecs h2 {
+  color: black;
+}
+
+.carPrice,
+.carPriceSold {
+  grid-column: 3;
+  place-self: center;
+}
+
+.carPrice:hover {
+  color: green;
+  transition: 0.75s;
+}
+
+.carPrice:hover,
+.carPriceSold:hover {
+  cursor: default;
+}
+
+.buyBtn,
+.buyBtnSold {
+  grid-column: 4;
+  place-self: center;
+  background: linear-gradient(to right, #19ca70, #5f9700);
+  background-color: #19ca70;
+  color: #fff;
+  font-family: Verdana;
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  padding: 14px 25px;
+  border: 0px solid #000;
+  border-radius: 100px;
+  box-shadow: inset 0px 0px 5px 0px #2d2d2d;
+}
+
+.buyBtn:hover {
+  background: linear-gradient(to right, #54d085, #79a451);
+  background-color: #54d085;
+  cursor: pointer;
+}
+
+.buyBtn:active {
+  transform: scale(0.95);
 }
 
 footer {
-  /* margin: 25px auto 0 auto; */
   border-top: 2px solid black;
   padding: 20px;
   text-align: center;

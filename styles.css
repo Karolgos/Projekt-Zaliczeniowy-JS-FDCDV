@@ -16,7 +16,7 @@ body {
 }
 
 #bgImage {
-  background-image: url("/img/Background.jpg");
+  background-image: url("img/Background.jpg");
   background-position: center;
   background-attachment: fixed;
   background-repeat: no-repeat;

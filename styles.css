@@ -39,6 +39,9 @@ nav {
   font-weight: bold;
   padding: 0 50px;
 }
+#logo span {
+  color: #21354e;
+}
 
 #navbar {
   display: flex;
@@ -113,11 +116,11 @@ main {
   grid-template-columns: repeat(4, 1fr);
   border: 1px solid black;
   padding: 10px;
-  background-color: rgba(163, 163, 163, 0.593);
+  background-color: rgba(163, 163, 163, 0.777);
 }
 
 .carItemSold {
-  opacity: 50%;
+  opacity: 55%;
 }
 
 .carItem ul li,
@@ -138,6 +141,7 @@ main {
   grid-column: 2;
   line-height: 37px;
   color: rgb(54, 54, 54);
+  margin-left: 15px;
 }
 
 .carSpecs:hover {
@@ -152,6 +156,7 @@ main {
 .carPriceSold {
   grid-column: 3;
   place-self: center;
+  font-size: 23px;
 }
 
 .carPrice:hover {
@@ -220,6 +225,14 @@ footer {
   #search {
     margin-right: 20px;
   }
+
+    #searchInput {
+    max-width: 160px;
+    }
+    
+  .carSpecs h2 {
+    font-size: 1.2em;
+  }
 }
 
 @media only screen and (max-width: 951px) {
@@ -234,6 +247,14 @@ footer {
 
   #search {
     margin-right: 15px;
+  }
+
+      #searchInput {
+    max-width: 150px;
+    }
+
+  .carSpecs h2 {
+    font-size: 1.1em;
   }
 }
 
@@ -273,4 +294,71 @@ footer {
     color: rgb(204, 0, 0);
     transition: 0.5s;
   }
+
+  main {
+    margin: 15px auto;
+  }
+  .carItem,
+  .carItemSold {
+    display: block;
+    max-width: max-content;
+    margin: auto;
+  }
+
+  .carSpecs {
+    margin-left: 0;
+  }
 }
+
+@media only screen and (max-width: 475px) {
+  #logo {
+    font-size: 25px;
+    padding: 0 15px;
+  }
+
+  #search {
+    margin-right: 5px;
+  }
+
+  #searchInput {
+    max-width: 120px;
+  }
+
+  #searchIcon {
+    margin: 3px;
+  }
+
+  .carItem img,
+  .carItemSold img,
+  #thankYouPage img {
+    max-width: 200px;
+    max-height: 200px;
+  }
+}
+
+@media only screen and (max-width: 346px) {
+  #logo {
+    padding: 5px;
+  }
+
+  #searchInput {
+    max-width: 90px;
+    max-height: 28px;
+  }
+
+  .carItem img,
+  .carItemSold img,
+  #thankYouPage img {
+    max-width: 175px;
+    max-height: 175px;
+  }
+
+  .carSpecs {
+  line-height: 28px;
+}
+
+  .buyBtn,
+.buyBtnSold {
+  font-size: 15px;
+  padding: 11px 20px;
+} ;

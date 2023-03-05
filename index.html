@@ -10,9 +10,10 @@
       src="https://kit.fontawesome.com/66611cc9ca.js"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
+    <div id="bgImage">
     <container id="mainPage">
       <nav>
         <input type="checkbox" id="check" />
@@ -176,21 +177,51 @@
       <footer>&copy Copyright 2023</footer>
     </container>
     <container id="shoppingCart">
-      <h2>Wybrane auto</h2>
+      <h2>Wybrane auto: </h2>
         <form>
           <div id="accessories">
             <h3>Akcesoria</h3>
-            <ul>
-              <li>Opony zimowe</li>
-              <li>Dodatkowy rok gwarancji</li>
-              <li>Środki czystości AutoKar</li>
-              <li>Wycieraczki AutoKar</li>
-            </ul>
-            <input type="text" />
-            <input type="radio" />
+            <div id="accesoriesListInput">
+              <label for="accesoriesList">Dodatki do wyboru: </label>
+              <input type="checkbox" name="accesoriesList" />Opony zimowe
+              <input type="checkbox" name="accesoriesList" />Dodatkowy rok gwarancji
+              <input type="checkbox" name="accesoriesList" />Środki czystości AutoKar
+              <input type="checkbox" name="accesoriesList" />Wycieraczki AutoKar
+            </div>
+            <div id="nameForm">
+              <label for="nameInput">Imię i nazwisko właściciela auta: </label>
+              <input name="nameInput" />
+            </div>
+            <div id="deliveryDate">
+              <label for="deliveryInput">Wybierz datę dostawy: </label>
+              <input type="date" name="deliveryInput" />
+            </div>
+            <div id="deliveryAddress">
+              <label for="deliveryInput">Wybierz adres dostawy: </label>
+              <input name="deliveryInput" />
+            </div>
+            <div id="paymentForm">
+              <label for="paymentMethodInput">Wybierz sposób zapłaty: </label>
+              <input type="radio" name="paymentMethodInput" /> Leasing
+              <input type="radio" name="paymentMethodInput" /> Gotówka
+            </div>
+            <div id="captcha">
+              <button type="button">Captcha API</button>
+            </div>
         </form>
         <p id="orderTotal">Kwota do zapłaty:</p>
+        <button type="button" id="backBtn">Powrót</button>
+        <button type="button" id="confirmBtn">Zatwierdź i zapłać</button>
       </div>
     </container>
+    <container id="thankYouPage">
+      <h1>Dziękujemy za zakup *nazwa auta*</h1>
+      <img src="/img/stockBoughtCar.jpg">
+      <p>Wybrana metoda płatności: </p>
+      <p>Do zapłaty: *suma*</p>
+      <p>Termin dostawy: *deliveryDate*</p>
+      <button id="mainPageBtn">Powrót do strony głównej</button>
+    </container>
+    </div>
   </body>
 </html>

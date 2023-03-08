@@ -11,6 +11,10 @@ const $buyerName = document.getElementById("nameInputField");
 const $cashInput = document.getElementById("cashInput");
 const $leasingInput = document.getElementById("leasingInput");
 const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
+const $chosenCarImg = document.getElementById("chosenCarImg");
+const $deliveryDateSummary = document.getElementById("deliveryDateSummary");
+const $paymentMethodSummary = document.getElementById("paymentMethodSummary");
+const $carNameSummary = document.getElementById("carNameSummary");
 
 const $chooseAudiBtn = document.getElementById("chooseAudiBtn");
 const $choosePeugeotBtn = document.getElementById("choosePeugeotBtn");
@@ -26,65 +30,56 @@ const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 let shoppingCartItems = [];
 let orderTotal = 0;
 let $orderTotalElement = document.getElementById("orderTotal");
+const $orderTotalSummary = document.getElementById("orderTotalSummary");
 
 const audiCar = {
   name: "Audi RS6 Avant",
   price: 249900,
-  img: document.getElementById("audiImg"),
 };
 
 const peugeotCar = {
   name: "Peugeot 407",
   price: 18999,
-  img: document.getElementById("peugeotImg"),
 };
 
 const fordCar = {
   name: "Ford Focus Hatchback",
   price: 40959,
-  img: document.getElementById("fordImg"),
 };
 
 const fiatCar = {
   name: "Fiat 500",
   price: 30500,
-  img: document.getElementById("fiatImg"),
 };
 
 const miniCar = {
   name: "Mini Cooper",
   price: 38900,
-  img: document.getElementById("miniImg"),
 };
 
 const opelCar = {
   name: "Opel Astra",
   price: 30900,
-  img: document.getElementById("opelImg"),
 };
 
 const citroenCar = {
   name: "Citroën 2CV",
   price: 94000,
-  img: document.getElementById("citroenImg"),
 };
 
 const mazdaCar = {
   name: "Mazda Rx-7",
   price: 120000,
-  img: document.getElementById("mazdaImg"),
 };
 
 const lotusCar = {
   name: "Lotus Elise 111R",
   price: 69900,
-  img: document.getElementById("lotusImg"),
 };
 
 const lexusCar = {
   name: "Lexus ES",
   price: 199999,
-  img: document.getElementById("lexusImg"),
 };
 
 for (let i = 0; i < $buyBtns.length; i++) {
@@ -98,6 +93,8 @@ $chooseAudiBtn.addEventListener("click", function () {
   shoppingCartItems.push(audiCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + audiCar.name;
+  $chosenCarImg.setAttribute("src", "img/Rs6 Avant.jpg");
+  $chosenCarImg.setAttribute("alt", "Rs6 Avant");
   orderTotal += audiCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -107,6 +104,8 @@ $choosePeugeotBtn.addEventListener("click", function () {
   shoppingCartItems.push(peugeotCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + peugeotCar.name;
+  $chosenCarImg.setAttribute("src", "img/407.jpg");
+  $chosenCarImg.setAttribute("alt", "Peugeot 407");
   orderTotal += peugeotCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -116,6 +115,8 @@ $chooseFordBtn.addEventListener("click", function () {
   shoppingCartItems.push(fordCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + fordCar.name;
+  $chosenCarImg.setAttribute("src", "img/Focus.jpg");
+  $chosenCarImg.setAttribute("alt", "Ford Focus Hatchback");
   orderTotal += fordCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -125,6 +126,8 @@ $chooseFiatBtn.addEventListener("click", function () {
   shoppingCartItems.push(fiatCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + fiatCar.name;
+  $chosenCarImg.setAttribute("src", "img/Fiat 500.jpg");
+  $chosenCarImg.setAttribute("alt", "Fiat 500");
   orderTotal += fiatCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -134,6 +137,8 @@ $chooseOpelBtn.addEventListener("click", function () {
   shoppingCartItems.push(opelCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + opelCar.name;
+  $chosenCarImg.setAttribute("src", "img/Opel Astra.jpg");
+  $chosenCarImg.setAttribute("alt", "Opel Astra");
   orderTotal += opelCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -143,6 +148,8 @@ $chooseCitroenBtn.addEventListener("click", function () {
   shoppingCartItems.push(citroenCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + citroenCar.name;
+  $chosenCarImg.setAttribute("src", "img/Citroen 2CV.jpg");
+  $chosenCarImg.setAttribute("alt", "Citroen 2CV");
   orderTotal += citroenCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -152,6 +159,8 @@ $chooseLotusBtn.addEventListener("click", function () {
   shoppingCartItems.push(lotusCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + lotusCar.name;
+  $chosenCarImg.setAttribute("src", "img/Lotus Elise.jpg");
+  $chosenCarImg.setAttribute("alt", "Lotus Elise 111R");
   orderTotal += lotusCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -161,6 +170,8 @@ $chooseLexusBtn.addEventListener("click", function () {
   shoppingCartItems.push(lexusCar);
   document.getElementById("chosenCarName").innerText =
     "Wybrane auto: " + lexusCar.name;
+  $chosenCarImg.setAttribute("src", "img/Lexus ES.jpg");
+  $chosenCarImg.setAttribute("alt", "Lexus ES");
   orderTotal += lexusCar.price;
   $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
   console.log(shoppingCartItems);
@@ -240,6 +251,14 @@ function checkForm() {
   if (checkDate() && checkName() && isFilled()) {
     $shoppingCartPage.style.display = "none";
     $thankYouPage.style.display = "block";
+    $carNameSummary.innerText = `Dziękujemy za zakup ${shoppingCartItems[0].name}`;
+    $orderTotalSummary.innerText = `Zapłacono ${orderTotal}PLN`;
+    $deliveryDateSummary.innerText = `Termin dsotawy: ${$deliveryDate.value}`;
+    if ($leasingInput.checked) {
+      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Leasing`;
+    } else if ($cashInput.checked) {
+      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Gotówka`;
+    }
   } else if (checkName() === false) {
     console.log("display a name error");
   } else if (checkDate() === false) {

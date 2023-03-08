@@ -114,6 +114,7 @@ main {
 .carItemSold {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  height: 225px;
   border: 1px solid black;
   padding: 10px;
   background-color: rgba(163, 163, 163, 0.777);
@@ -133,13 +134,15 @@ main {
 .carItemSold img,
 #thankYouPage img {
   max-width: 250px;
-  max-height: 250px;
   grid-column: 1;
+  place-self: center;
 }
 
 .carSpecs {
   grid-column: 2;
-  line-height: 37px;
+  justify-content: start;
+  align-content: center;
+  line-height: 40px;
   color: rgb(54, 54, 54);
   margin-left: 15px;
 }
@@ -226,12 +229,17 @@ footer {
     margin-right: 20px;
   }
 
-    #searchInput {
+  #searchInput {
     max-width: 160px;
-    }
-    
+  }
+
   .carSpecs h2 {
-    font-size: 1.2em;
+    font-size: 22px;
+  }
+
+  .carPrice,
+  .carPriceSold {
+    font-size: 22px;
   }
 }
 
@@ -249,12 +257,17 @@ footer {
     margin-right: 15px;
   }
 
-      #searchInput {
+  #searchInput {
     max-width: 150px;
-    }
+  }
 
   .carSpecs h2 {
-    font-size: 1.1em;
+    font-size: 20px;
+  }
+
+  .carPrice,
+  .carPriceSold {
+    font-size: 20px;
   }
 }
 
@@ -298,10 +311,12 @@ footer {
   main {
     margin: 15px auto;
   }
+
   .carItem,
   .carItemSold {
     display: block;
-    max-width: max-content;
+    width: 275px;
+    height: auto;
     margin: auto;
   }
 
@@ -328,6 +343,11 @@ footer {
     margin: 3px;
   }
 
+  .carItem,
+  .carItemSold {
+    width: 225px;
+  }
+
   .carItem img,
   .carItemSold img,
   #thankYouPage img {
@@ -346,6 +366,11 @@ footer {
     max-height: 28px;
   }
 
+  .carItem,
+  .carItemSold {
+    width: 200px;
+  }
+
   .carItem img,
   .carItemSold img,
   #thankYouPage img {
@@ -354,11 +379,12 @@ footer {
   }
 
   .carSpecs {
-  line-height: 28px;
-}
+    line-height: 28px;
+  }
 
   .buyBtn,
-.buyBtnSold {
-  font-size: 15px;
-  padding: 11px 20px;
-} ;
+  .buyBtnSold {
+    font-size: 15px;
+    padding: 11px 20px;
+  }
+}

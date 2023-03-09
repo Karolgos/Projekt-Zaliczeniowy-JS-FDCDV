@@ -164,7 +164,7 @@ main {
 
 .carPrice:hover {
   color: green;
-  transition: 0.75s;
+  transition: 0.4s;
 }
 
 .carPrice:hover,
@@ -209,6 +209,29 @@ footer {
 
 #shoppingCart {
   display: none;
+}
+
+#accesoriesListInput {
+  display: block;
+}
+
+.accessoryItem {
+  display: block;
+  margin: 10px auto;
+}
+
+.errorMessage {
+  color: white;
+  background-color: red;
+  margin: 10px auto;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
+    rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+    rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  max-width: max-content;
+}
+
+.errorHihglight {
+  box-shadow: rgba(255, 0, 0, 0.761) 0 0 5px 2px;
 }
 
 #thankYouPage {

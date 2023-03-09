@@ -18,6 +18,7 @@ const $chooseMazdaBtn = document.getElementById("chooseMazdaBtn");
 const $chooseLotusBtn = document.getElementById("chooseLotusBtn");
 const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 
+const $form = document.getElementById("formElements");
 const $tiresBonus = document.getElementById("tires");
 const $warrantyBonus = document.getElementById("warranty");
 const $paintJobBonus = document.getElementById("paintJob");
@@ -316,15 +317,11 @@ $backBtn.addEventListener("click", function () {
 function checkDate() {
   let input = $deliveryDate.value;
   let dateEntered = new Date(input);
-  let chosenDay = Number(dateEntered.getDate());
-  let chosenMonth = Number(dateEntered.getMonth() + 1);
-  let chosenYear = Number(dateEntered.getFullYear());
-  const date = new Date();
-  let minDay = Number(date.getDate() + 14);
-  let month = Number(date.getMonth() + 1);
-  let year = Number(date.getFullYear());
 
-  if (chosenDay >= minDay && chosenMonth >= month && chosenYear >= year) {
+  const date = new Date();
+  date.setDate(date.getDate() + 13);
+
+  if (dateEntered >= date) {
     console.log("Data poprawna");
     return true;
   } else {
@@ -346,7 +343,7 @@ function checkName() {
     $buyerName.value = firstName + lastName;
     if (
       $buyerName.value.indexOf(" ") !== -1 &&
-      firstName.length >= 2 &&
+      firstName.length >= 3 &&
       lastName.length >= 2
     ) {
       console.log("Imie poprawne");
@@ -379,20 +376,57 @@ function checkForm() {
   if (checkDate() && checkName() && isFilled()) {
     $shoppingCartPage.style.display = "none";
     $thankYouPage.style.display = "block";
+    $deliveryAddressInput.removeAttribute("class");
+    $cashInput.removeAttribute("class");
+    $leasingInput.removeAttribute("class");
+    $buyerName.removeAttribute("class");
+    $deliveryDate.removeAttribute("class");
     $carNameSummary.innerText = `Dziękujemy za zakup ${shoppingCartItems[0].name}`;
-    $orderTotalSummary.innerText = `Zapłacono ${orderTotal}PLN`;
+    $orderTotalSummary.innerText = `Zapłacono ${orderTotal} PLN`;
     $deliveryDateSummary.innerText = `Termin dsotawy: ${$deliveryDate.value}`;
     if ($leasingInput.checked) {
       $paymentMethodSummary.innerText = `Wybrana metoda płatności: Leasing`;
     } else if ($cashInput.checked) {
       $paymentMethodSummary.innerText = `Wybrana metoda płatności: Gotówka`;
     }
-  } else if (checkName() === false) {
-    console.log("display a name error");
-  } else if (checkDate() === false) {
-    console.log("display a date error");
-  } else if (isFilled() === false) {
-    console.log("Sa puste pola w formularzu");
+  }
+
+  if (checkName() === false) {
+    const nameError = document.createElement("p");
+    nameError.innerText = "Proszę wprowadzić poprawne imię i nazwisko.";
+    nameError.setAttribute("class", "errorMessage");
+    nameError.setAttribute("id", "nameError");
+    $form.appendChild(nameError);
+    $buyerName.setAttribute("class", "errorHihglight");
+  } else if (checkName()) {
+    document.getElementById("nameError").style.cssText +=
+      "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
+  }
+
+  if (checkDate() === false) {
+    const dateError = document.createElement("p");
+    dateError.innerText = "Data dostawy to minimum 14 dni.";
+    dateError.setAttribute("class", "errorMessage");
+    dateError.setAttribute("id", "dateError");
+    $form.appendChild(dateError);
+    $deliveryDate.setAttribute("class", "errorHihglight");
+  } else if (checkDate()) {
+    document.getElementById("dateError").style.cssText +=
+      "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
+  }
+
+  if (isFilled() === false) {
+    const emptyError = document.createElement("p");
+    emptyError.innerText = "Pola nie mogą być puste.";
+    emptyError.setAttribute("class", "errorMessage");
+    emptyError.setAttribute("id", "emptyError");
+    $form.appendChild(emptyError);
+    $deliveryAddressInput.setAttribute("class", "errorHihglight");
+    $cashInput.setAttribute("class", "errorHihglight");
+    $leasingInput.setAttribute("class", "errorHihglight");
+  } else if (isFilled()) {
+    document.getElementById("emptyError").style.cssText +=
+      "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
   }
 }
 
@@ -401,6 +435,13 @@ $confirmBtn.addEventListener("click", checkForm);
 $mainPageBtn.addEventListener("click", function () {
   $thankYouPage.style.display = "none";
   $mainPage.style.display = "block";
+  $tiresBonus.checked = false;
+  $warrantyBonus.checked = false;
+  $paintJobBonus.checked = false;
+  $waxingBonus.checked = false;
+  $upholsteryBonus.checked = false;
+  $suppliesBonus.checked = false;
+  $windscreenWipersBonus.checked = false;
   $buyerName.value = null;
   $deliveryAddressInput.value = null;
   $deliveryDate.value = null;

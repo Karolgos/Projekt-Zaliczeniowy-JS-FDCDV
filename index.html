@@ -178,22 +178,22 @@
     </container>
     <container id="shoppingCart">
       <h2 id="chosenCarName">Wybrane auto: </h2>
-        <form>
+        <form id="formElements">
           <div id="accessories">
             <h3>Akcesoria</h3>
             <div id="accesoriesListInput">
               <label for="accesoriesList">Dodatki i usługi do wyboru: </label>
-              <input type="checkbox" name="accesoriesList" id="tires"/>Opony zimowe
-              <input type="checkbox" name="accesoriesList" id="warranty"/>Dodatkowy rok gwarancji
-              <input type="checkbox" name="accesoriesList" id="paintJob"/>Lakierowanie auta
-              <input type="checkbox" name="accesoriesList" id="waxing"/>Woskowanie i usuwanie rys
-              <input type="checkbox" name="accesoriesList" id="upholstery"/>Wymiana tapicerki
-              <input type="checkbox" name="accesoriesList" id="supplies"/>Zestaw środków czystości AutoKar
-              <input type="checkbox" name="accesoriesList" id="windscreenWipers"/>Wycieraczki AutoKar
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires"/>Opony zimowe
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty"/>Dodatkowy rok gwarancji
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob"/>Lakierowanie auta
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing"/>Woskowanie i usuwanie rys
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery"/>Wymiana tapicerki
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="supplies"/>Zestaw środków czystości AutoKar
+              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers"/>Wycieraczki AutoKar
             </div>
             <div id="nameForm">
               <label for="nameInput">Imię i nazwisko właściciela auta: </label>
-              <input name="nameInput"  id="nameInputField"/>
+              <input name="nameInput" placeholder="Jan Kowalewski" id="nameInputField"/>
             </div>
             <div id="deliveryDateForm">
               <label for="deliveryInput">Wybierz datę dostawy: </label>
@@ -201,7 +201,7 @@
             </div>
             <div id="deliveryAddressForm">
               <label for="deliveryInput">Wybierz adres dostawy: </label>
-              <input name="deliveryInput"  id="deliveryAddressInput"/>
+              <input name="deliveryInput" placeholder="ul. Przykładowa 21/2, 62-200 Gniezno" id="deliveryAddressInput"/>
             </div>
             <div id="paymentForm">
               <label for="paymentMethodInput">Wybierz sposób zapłaty: </label>

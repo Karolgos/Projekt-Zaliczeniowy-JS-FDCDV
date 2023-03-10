@@ -220,6 +220,10 @@ footer {
   margin: 10px auto;
 }
 
+.defaultInput {
+  box-shadow: none;
+}
+
 .errorMessage {
   color: white;
   background-color: red;
@@ -232,6 +236,10 @@ footer {
 
 .errorHihglight {
   box-shadow: rgba(255, 0, 0, 0.761) 0 0 5px 2px;
+}
+
+.errorCorrected {
+  box-shadow: rgba(15, 224, 0, 0.761) 0 0 5px 2px;
 }
 
 #thankYouPage {

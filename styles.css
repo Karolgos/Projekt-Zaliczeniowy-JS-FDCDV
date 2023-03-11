@@ -4,6 +4,14 @@
   margin: 0;
 }
 
+.colorsStorage {
+  color: #6b7f82;
+  color: #7c99b4;
+  color: #8eb8e5;
+  color: #5b5750;
+  color: #492c1d;
+}
+
 body,
 html {
   height: 100%;
@@ -173,7 +181,8 @@ main {
 }
 
 .buyBtn,
-.buyBtnSold {
+.buyBtnSold,
+.btn {
   grid-column: 4;
   place-self: center;
   background: linear-gradient(to right, #19ca70, #5f9700);

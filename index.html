@@ -20,7 +20,7 @@
         <label for="check" id="checkBtn"
           ><i class="fa-solid fa-bars"></i
         ></label>
-        <label id="logo">Auto<span>Kar</span></label>
+        <label for="nav" class="logo">Auto<span>Kar</span></label>
         <ul id="navbar">
           <li class="navbarItem">
             <a href="index.html" class="link">Nasze auta</a>
@@ -31,13 +31,13 @@
             <a href="#" class="link">Często zadawane pytania</a>
           </li>
         </ul>
-        <div id="search">
+        <div class="search">
           <input
             type="text"
             placeholder="Wyszukaj po marce"
             id="searchInput"
-          /><button id="searchBtn"></button>
-          <label for="searchBtn" id="searchIcon"
+          />
+          <label for="searchInput" id="searchIcon"
             ><i class="fa-solid fa-magnifying-glass"></i
           ></label>
         </div>
@@ -46,7 +46,7 @@
         <div class="carItem">
           <img src="img/Rs6 Avant.jpg" alt="Audi RS6 Avant"/>
           <div class="carSpecs"
-            ><h2>Audi RS6 Avant</h2>
+            ><h2 class="carName">Audi RS6 Avant</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2015</li>
               <li><i class="fa-solid fa-gauge-high"></i> 560 KM</li>
@@ -59,7 +59,7 @@
         <div class="carItem">
           <img src="img/407.jpg" alt="peugeotPicture"/>
           <div class="carSpecs"
-            ><h2>Peugeot 407</h2>
+            ><h2 class="carName">Peugeot 407</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2006</li>
               <li><i class="fa-solid fa-gauge-high"></i> 163 KM</li>
@@ -72,7 +72,7 @@
         <div class="carItem">
           <img src="img/Focus.jpg" alt="fordPicture"/>
           <div class="carSpecs"
-            ><h2>Ford Focus Hatchback</h2>
+            ><h2 class="carName">Ford Focus Hatchback</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2015</li>
               <li><i class="fa-solid fa-gauge-high"></i> 120 KM</li>
@@ -85,7 +85,7 @@
         <div class="carItem">
           <img src="img/Fiat 500.jpg" alt="fiatPicture"/>
           <div class="carSpecs"
-            ><h2>Fiat 500</h2>
+            ><h2 class="carName">Fiat 500</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2012</li>
               <li><i class="fa-solid fa-gauge-high"></i> 69 KM</li>
@@ -98,7 +98,7 @@
         <div class="carItemSold">
           <img src="img/Mini Cooper.jpg" alt="miniPicture"/>
           <div class="carSpecs"
-            ><h2>Mini Cooper *NIEAKTUALNE*</h2>
+            ><h2 class="carNameSold">Mini Cooper *NIEAKTUALNE*</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2013</li>
               <li><i class="fa-solid fa-gauge-high"></i> 122 KM</li>
@@ -111,7 +111,7 @@
         <div class="carItem">
           <img src="img/Opel Astra.jpg" alt="opelPicture"/>
           <div class="carSpecs"
-            ><h2>Opel Astra</h2>
+            ><h2 class="carName">Opel Astra</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2014</li>
               <li><i class="fa-solid fa-gauge-high"></i> 95 KM</li>
@@ -124,7 +124,7 @@
         <div class="carItem">
           <img src="img/Citroen 2CV.jpg" alt="citroenPicture"/>
           <div class="carSpecs"
-            ><h2>Citroën 2CV *UNIKAT*</h2>
+            ><h2 class="carName">Citroën 2CV *UNIKAT*</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 1979</li>
               <li><i class="fa-solid fa-gauge-high"></i> 29 KM</li>
@@ -137,7 +137,7 @@
         <div class="carItemSold">
           <img src="img/Mazda rx7.jpg" alt="mazdaPicture"/>
           <div class="carSpecs"
-            ><h2>Mazda Rx-7 *NIEAKTUALNE*</h2>
+            ><h2 class="carNameSold">Mazda Rx-7 *NIEAKTUALNE*</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 1999</li>
               <li><i class="fa-solid fa-gauge-high"></i> 276 KM</li>
@@ -150,7 +150,7 @@
         <div class="carItem">
           <img src="img/Lotus Elise.jpg" alt="lotusPicture"/>
           <div class="carSpecs"
-            ><h2>Lotus Elise 111R</h2>
+            ><h2 class="carName">Lotus Elise 111R</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2004</li>
               <li><i class="fa-solid fa-gauge-high"></i> 192 KM</li>
@@ -163,7 +163,7 @@
         <div class="carItem">
           <img src="img/Lexus ES.jpg" alt="lexusPicture"/>
           <div class="carSpecs"
-            ><h2>Lexus ES</h2>
+            ><h2 class="carName">Lexus ES</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2021</li>
               <li><i class="fa-solid fa-gauge-high"></i> 218 KM</li>
@@ -177,39 +177,61 @@
       <footer>&copy Copyright 2023</footer>
     </container>
     <container id="shoppingCart">
-      <h2 id="chosenCarName">Wybrane auto: </h2>
         <form id="formElements">
+          <h2 id="chosenCarName">Wybrane auto: </h2>
           <div id="accessories">
-            <h3>Akcesoria</h3>
+            <h3 class="accessoriesHeader">Akcesoria</h3>
+            <label for="accesoriesListInput">Dodatki i usługi do wyboru: </label>
             <div id="accesoriesListInput">
-              <label for="accesoriesList">Dodatki i usługi do wyboru: </label>
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires"/>Opony zimowe
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty"/>Dodatkowy rok gwarancji
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob"/>Lakierowanie auta
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing"/>Woskowanie i usuwanie rys
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery"/>Wymiana tapicerki
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="supplies"/>Zestaw środków czystości AutoKar
-              <input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers"/>Wycieraczki AutoKar
+              <div class="accesoryInput">
+              <label for="tires">Opony zimowe</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="warranty">Dodatkowy rok gwarancji</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="paintJob">Lakierowanie auta</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="waxing">Woskowanie i usuwanie rys</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="upholstery">Wymiana tapicerki</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="supplies">Zestaw środków czystości AutoKar</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="supplies"/></span>
+              </div>
+              <div class="accesoryInput">
+              <label for="windscreenWipers">Wycieraczki AutoKar</label>
+              <span clas="accessoryCheck"><input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers" /></span>
+              </div>
             </div>
-            <div id="nameForm">
-              <label for="nameInput">Imię i nazwisko właściciela auta: </label>
-              <input name="nameInput" placeholder="Jan Kowalewski" id="nameInputField"/>
+            <div class="accesoryInput" id="nameForm">
+              <label for="nameInputField">Imię i nazwisko właściciela auta: </label>
+              <input class="textAndDate" name="nameInput" placeholder="Jan Kowalewski" id="nameInputField"/>
             </div>
-            <div id="deliveryDateForm">
+            <div class="accesoryInput" id="deliveryDateForm">
               <label for="deliveryInput">Wybierz datę dostawy: </label>
-              <input type="date" name="deliveryInput" id="deliveryDate" />
+              <input class="textAndDate" type="date" name="deliveryInput" id="deliveryDate" />
             </div>
-            <div id="deliveryAddressForm">
+            <div class="accesoryInput" id="deliveryAddressForm">
               <label for="deliveryInput">Wybierz adres dostawy: </label>
-              <input name="deliveryInput" placeholder="ul. Przykładowa 21/2, 62-200 Gniezno" id="deliveryAddressInput"/>
+              <input class="textAndDate" name="deliveryInput" placeholder="ul. Przykładowa 21/2, 62-200 Gniezno" id="deliveryAddressInput"/>
             </div>
-            <div id="paymentForm">
+            <div class="accesoryInput" id="paymentForm">
               <label for="paymentMethodInput">Wybierz sposób zapłaty: </label>
-              <input type="radio" name="paymentMethodInput" id="leasingInput"/> Leasing
-              <input type="radio" name="paymentMethodInput" id="cashInput"/> Gotówka
+              <span class="radioBtn"><input type="radio" name="paymentMethodInput" id="leasingInput"/></span> Leasing
+              <span class="radioBtn"><input type="radio" name="paymentMethodInput" id="cashInput"/></span> Gotówka
             </div>
         </form>
         <p id="orderTotal">Kwota do zapłaty:</p>
+        <div class="shoppingCartBtns">
         <button type="button" class="btn" id="backBtn">Powrót</button>
         <button type="button" class="btn" id="confirmBtn">Zatwierdź i zapłać</button>
       </div>

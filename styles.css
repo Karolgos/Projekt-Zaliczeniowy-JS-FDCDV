@@ -32,6 +32,11 @@ body {
   min-height: 100%;
 }
 
+p,
+label {
+  font-size: 1.1rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -39,15 +44,15 @@ nav {
   background-color: rgba(49, 72, 82, 0.512);
   height: 80px;
   width: 100%;
-  color: white;
 }
 
-#logo {
+.logo {
   font-size: 38px;
   font-weight: bold;
   padding: 0 50px;
+  color: ghostwhite;
 }
-#logo span {
+.logo span {
   color: #21354e;
 }
 
@@ -66,11 +71,11 @@ nav {
 }
 
 .link {
-  color: white;
   font-size: 18px;
   border-radius: 3px;
   text-decoration: none;
   padding: 7px 13px;
+  color: ghostwhite;
 }
 
 .link:hover {
@@ -78,20 +83,16 @@ nav {
   transition: 0.5s;
 }
 
-#search {
+.search {
   display: flex;
   justify-content: flex-end;
   flex-grow: 1;
   margin-right: 25px;
+  margin-bottom: 12px;
   height: 30px;
 }
 
-#searchBtn {
-  display: none;
-}
-
 #searchIcon {
-  cursor: pointer;
   font-size: 25px;
   margin: 0 25px 0 5px;
 }
@@ -104,7 +105,6 @@ nav {
   order: 5;
   justify-content: flex-end;
   font-size: 25px;
-  color: white;
   margin-right: 30px;
   cursor: pointer;
   display: none;
@@ -130,6 +130,11 @@ main {
 
 .carItemSold {
   opacity: 55%;
+}
+
+.carName,
+.carNameSold {
+  line-height: 1.3;
 }
 
 .carItem ul li,
@@ -187,7 +192,7 @@ main {
   place-self: center;
   background: linear-gradient(to right, #19ca70, #5f9700);
   background-color: #19ca70;
-  color: #fff;
+  color: ghostWhite;
   font-family: Verdana;
   font-size: 18px;
   font-weight: 400;
@@ -218,15 +223,68 @@ footer {
 
 #shoppingCart {
   display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px;
+  background-color: #21354e48;
+  border-radius: 45px;
+  line-height: 1.6;
+}
+
+.accessoriesHeader {
+  font-size: 25px;
+}
+
+#formElements {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+
+#chosenCarName {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#accessories {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 #accesoriesListInput {
-  display: block;
+  margin-bottom: 25px;
+}
+
+.accesoryInput {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textAndDate {
+  width: 250px;
 }
 
 .accessoryItem {
-  display: block;
-  margin: 10px auto;
+  margin-right: 210px;
+}
+
+.radioBtn {
+  margin-left: 60px;
+}
+
+#orderTotal {
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.shoppingCartBtns {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .defaultInput {
@@ -234,13 +292,12 @@ footer {
 }
 
 .errorMessage {
-  color: white;
+  color: ghostWhite;
   background-color: red;
-  margin: 10px auto;
+  font-size: 1.05rem;
   box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
     rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
-  max-width: max-content;
 }
 
 .errorHihglight {
@@ -256,7 +313,7 @@ footer {
 }
 
 @media only screen and (max-width: 1101px) {
-  #logo {
+  .logo {
     font-size: 32px;
     padding: 0 30px;
   }
@@ -265,7 +322,7 @@ footer {
     font-size: 16px;
   }
 
-  #search {
+  .search {
     margin-right: 20px;
   }
 
@@ -284,7 +341,7 @@ footer {
 }
 
 @media only screen and (max-width: 951px) {
-  #logo {
+  .logo {
     font-size: 30px;
     padding: 0 20px;
   }
@@ -312,7 +369,7 @@ footer {
 }
 
 @media only screen and (max-width: 871px) {
-  #search {
+  .search {
     justify-content: flex-end;
     margin-right: 10px;
   }
@@ -365,12 +422,12 @@ footer {
 }
 
 @media only screen and (max-width: 475px) {
-  #logo {
+  .logo {
     font-size: 25px;
     padding: 0 15px;
   }
 
-  #search {
+  .search {
     margin-right: 5px;
   }
 
@@ -397,7 +454,7 @@ footer {
 }
 
 @media only screen and (max-width: 346px) {
-  #logo {
+  .logo {
     padding: 5px;
   }
 

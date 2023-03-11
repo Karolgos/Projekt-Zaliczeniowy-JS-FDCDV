@@ -6,6 +6,13 @@ const $backBtn = document.getElementById("backBtn");
 const $confirmBtn = document.getElementById("confirmBtn");
 const $mainPageBtn = document.getElementById("mainPageBtn");
 
+const $searchInput = document.getElementById("searchInput");
+const $searchBtn = document.getElementById("searchBtn");
+const $carName = document.getElementsByClassName("carName");
+const $carNameSold = document.getElementsByClassName("carNameSold");
+const $carItems = document.getElementsByClassName("carItem");
+const $carItemsSold = document.getElementsByClassName("carItemSold");
+
 const $buyBtns = document.getElementsByClassName("buyBtn");
 const $chooseAudiBtn = document.getElementById("chooseAudiBtn");
 const $choosePeugeotBtn = document.getElementById("choosePeugeotBtn");
@@ -127,6 +134,30 @@ const windscreenWipersBonus = {
   name: "Wycieraczki AutoKar",
   price: 75,
 };
+
+function search() {
+  let filter = $searchInput.value.toUpperCase();
+
+  for (i = 0; i < $carName.length; i++) {
+    let txtValue = $carName[i].textContent || $carName[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue.length === 0) {
+      $carItems[i].style.display = "grid";
+    } else {
+      $carItems[i].style.display = "none";
+    }
+  }
+
+  for (i = 0; i < $carNameSold.length; i++) {
+    let txtValue = $carNameSold[i].textContent || $carName[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue.length === 0) {
+      $carItemsSold[i].style.display = "grid";
+    } else {
+      $carItemsSold[i].style.display = "none";
+    }
+  }
+}
+
+$searchInput.addEventListener("keyup", search);
 
 $chooseAudiBtn.addEventListener("click", function () {
   shoppingCartItems.push(audiCar);
@@ -364,7 +395,7 @@ function loadLocalStorage() {
 for (let i = 0; i < $buyBtns.length; i++) {
   $buyBtns[i].addEventListener("click", function () {
     $mainPage.style.display = "none";
-    $shoppingCartPage.style.display = "block";
+    $shoppingCartPage.style.display = "flex";
     loadLocalStorage();
   });
 }

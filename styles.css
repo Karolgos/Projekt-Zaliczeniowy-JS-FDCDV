@@ -345,14 +345,13 @@ footer {
 
   .carItem,
   .carItemSold {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     width: 275px;
     height: auto;
     margin: auto;
-  }
-
-  .carSpecs {
-    margin-left: 0;
   }
 }
 
@@ -377,6 +376,7 @@ footer {
   .carItem,
   .carItemSold {
     width: 225px;
+    min-height: 414px;
   }
 
   .carItem img,

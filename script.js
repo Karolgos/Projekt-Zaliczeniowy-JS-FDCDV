@@ -25,7 +25,7 @@ const $chooseMazdaBtn = document.getElementById("chooseMazdaBtn");
 const $chooseLotusBtn = document.getElementById("chooseLotusBtn");
 const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 
-const $form = document.getElementById("formElements");
+const $form = document.getElementById("form");
 let $tiresBonus = document.getElementById("tires");
 let $warrantyBonus = document.getElementById("warranty");
 let $paintJobBonus = document.getElementById("paintJob");
@@ -34,11 +34,12 @@ let $upholsteryBonus = document.getElementById("upholstery");
 let $suppliesBonus = document.getElementById("supplies");
 let $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
-let $deliveryDate = document.getElementById("deliveryDate");
-let $buyerName = document.getElementById("nameInputField");
-let $cashInput = document.getElementById("cashInput");
-let $leasingInput = document.getElementById("leasingInput");
-let $deliveryAddressInput = document.getElementById("deliveryAddressInput");
+const $deliveryDate = document.getElementById("deliveryDateInput");
+const $buyerName = document.getElementById("nameInputField");
+const $cashInput = document.getElementById("cashInput");
+const $leasingInput = document.getElementById("leasingInput");
+const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
+const $emailInput = document.getElementById("emailInput");
 
 const $chosenCarImg = document.getElementById("chosenCarImg");
 const $deliveryDateSummary = document.getElementById("deliveryDateSummary");
@@ -450,8 +451,9 @@ function checkName() {
 
 function isFilled() {
   if (
-    $buyerName.value.length !== 0 &&
+    $buyerName.value.length > 4 &&
     $deliveryAddressInput.value.length > 5 &&
+    $emailInput.value.length > 3 &&
     ($leasingInput.checked || $cashInput.checked)
   ) {
     console.log("pola wypelnione");
@@ -528,10 +530,12 @@ function checkForm() {
     $deliveryAddressInput.setAttribute("class", "errorHihglight");
     $cashInput.setAttribute("class", "errorHihglight");
     $leasingInput.setAttribute("class", "errorHihglight");
+    $emailInput.setAttribute("class", "errorHihglight");
   } else if (isFilled()) {
     $deliveryAddressInput.setAttribute("class", "defaultInput");
     $cashInput.setAttribute("class", "defaultInput");
     $leasingInput.setAttribute("class", "defaultInput");
+    $emailInput.setAttribute("class", "defaultInput");
   }
 }
 

@@ -1,16 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-.colorsStorage {
+/* .colorsStorage {
   color: #6b7f82;
   color: #7c99b4;
   color: #8eb8e5;
   color: #5b5750;
   color: #492c1d;
-}
+} */
 
 body,
 html {
@@ -20,7 +22,7 @@ html {
 body {
   background-color: rgb(226, 226, 226);
   max-width: 100%;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 #bgImage {
@@ -32,9 +34,8 @@ body {
   min-height: 100%;
 }
 
-p,
-label {
-  font-size: 1.1rem;
+.regularText {
+  font-size: 19px;
 }
 
 nav {
@@ -52,6 +53,7 @@ nav {
   padding: 0 50px;
   color: ghostwhite;
 }
+
 .logo span {
   color: #21354e;
 }
@@ -193,23 +195,24 @@ main {
   background: linear-gradient(to right, #19ca70, #5f9700);
   background-color: #19ca70;
   color: ghostWhite;
-  font-family: Verdana;
   font-size: 18px;
   font-weight: 400;
   font-style: normal;
   text-decoration: none;
-  padding: 14px 25px;
+  padding: 25px 35px;
   border: 0px solid #000;
   border-radius: 100px;
   box-shadow: inset 0px 0px 5px 0px #2d2d2d;
 }
 
+.btn:hover,
 .buyBtn:hover {
   background: linear-gradient(to right, #54d085, #79a451);
   background-color: #54d085;
   cursor: pointer;
 }
 
+.btn:active,
 .buyBtn:active {
   transform: scale(0.95);
 }
@@ -228,7 +231,7 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
-  background-color: #21354e48;
+  background-color: #21354e95;
   border-radius: 45px;
   line-height: 1.6;
 }
@@ -237,7 +240,7 @@ footer {
   font-size: 25px;
 }
 
-#formElements {
+#form {
   display: flex;
   flex-direction: column;
   width: 500px;
@@ -256,17 +259,17 @@ footer {
   justify-content: space-evenly;
 }
 
-#accesoriesListInput {
+.accesoriesListInput {
   margin-bottom: 25px;
 }
 
-.accesoryInput {
+.accessoryInput {
   display: flex;
   justify-content: space-between;
 }
 
-.textAndDate {
-  width: 250px;
+.textAndDateInput {
+  width: 200px;
 }
 
 .accessoryItem {
@@ -302,10 +305,6 @@ footer {
 
 .errorHihglight {
   box-shadow: rgba(255, 0, 0, 0.761) 0 0 5px 2px;
-}
-
-.errorCorrected {
-  box-shadow: rgba(15, 224, 0, 0.761) 0 0 5px 2px;
 }
 
 #thankYouPage {

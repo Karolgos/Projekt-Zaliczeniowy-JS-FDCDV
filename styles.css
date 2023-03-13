@@ -36,7 +36,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #1b496586;
+  background-color: #0a2a3e7a;
   height: 80px;
   width: 100%;
 }
@@ -50,7 +50,7 @@ nav {
 }
 
 .logo span {
-  color: #21354e;
+  color: #10264edf;
 }
 
 #navbar {
@@ -192,7 +192,7 @@ main {
   background: linear-gradient(
     to right,
     rgba(163, 163, 163, 0.761),
-    rgba(163, 163, 163, 0.838)
+    rgba(115, 115, 115, 0.916)
   );
   color: ghostWhite;
   font-size: 18px;
@@ -235,7 +235,7 @@ footer {
 
 .accessoriesHeader {
   margin: 25px 0 10px 25px;
-  font-size: 25px;
+  font-size: 23px;
 }
 
 .formContent {
@@ -252,6 +252,7 @@ footer {
 #orderTotal,
 .textInputLabel,
 .textAndDateInput,
+.accessoryCheckbox,
 .accessoryInput {
   margin-left: 25px;
 }
@@ -276,7 +277,7 @@ footer {
 .textInputDiv {
   width: 100%;
   height: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .textInputLabel {
@@ -292,7 +293,7 @@ footer {
   width: 70%;
   line-height: 1;
   height: 2rem;
-  margin-top: 5px;
+  margin-top: 8px;
   font-size: 16px;
   font-size: max(16px, 1em);
   font-family: inherit;
@@ -311,7 +312,48 @@ footer {
 }
 
 .accesoriesListInput {
-  line-height: 1.3;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 22px;
+}
+
+.accessoryCheckbox {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 50px;
+  height: 20px;
+  appearance: none;
+  background: rgba(115, 115, 115, 0.916);
+  border-radius: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.671);
+  margin-left: 25px;
+}
+
+input:checked[type="checkbox"] {
+  background: #23345b;
+}
+
+input[type="checkbox"]:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background: ghostwhite;
+  transform: scale(1.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.73);
+  transition: 0.5s;
+}
+
+input:checked[type="checkbox"]:before {
+  left: 30px;
 }
 
 #orderTotal {
@@ -332,6 +374,8 @@ footer {
 .paymentForm {
   display: flex;
   flex-direction: row;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 .errorHihglightRadio,
@@ -403,17 +447,14 @@ footer {
     max-width: 160px;
   }
 
+  .carPrice,
+  .carPriceSold,
   .carName {
     font-size: 22px;
   }
 
   .carItem ul li {
     font-size: 18px;
-  }
-
-  .carPrice,
-  .carPriceSold {
-    font-size: 22px;
   }
 
   .buyBtn,
@@ -509,9 +550,42 @@ footer {
     height: auto;
     margin: auto;
   }
+
+  .textInputs {
+    row-gap: 5px;
+  }
+
+  .textInputLabel {
+    font-size: 15px;
+  }
+
+  .accessoriesHeader {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  input[type="checkbox"] {
+    margin-left: 10px;
+  }
+
+  .accessoriesListHeader {
+    font-size: 16px;
+  }
+
+  .formContent .regularText {
+    font-size: 15px;
+  }
+
+  #orderTotal {
+    font-size: 17px;
+  }
+
+  .formContent .btn {
+    padding: 15px 20px;
+  }
 }
 
-@media only screen and (max-width: 475px) {
+@media only screen and (max-width: 521px) {
   .logo {
     font-size: 25px;
     padding: 0 15px;
@@ -541,9 +615,65 @@ footer {
     max-width: 200px;
     max-height: 200px;
   }
+
+  #chosenCarName {
+    font-size: 20px;
+  }
+
+  .textInputLabel {
+    font-size: 13px;
+  }
+
+  .accessoriesHeader {
+    font-size: 17px;
+    margin-top: 13px;
+  }
+
+  .accessoriesListHeader {
+    font-size: 14px;
+  }
+
+  .formContent .regularText {
+    font-size: 13px;
+  }
+
+  #orderTotal {
+    font-size: 15px;
+  }
+
+  .buyBtn,
+  .buyBtnSold,
+  .formContent .btn {
+    padding: 12px 17px;
+    font-size: 15px;
+  }
+
+  .customRadioLabel {
+    width: 18px;
+    height: 18px;
+    margin-left: 17px;
+    margin-right: 10px;
+  }
+
+  .textAndDateInput {
+    max-height: 25px;
+  }
+
+  input[type="checkbox"] {
+    width: 30px;
+  }
+
+  input[type="checkbox"]:before {
+    width: 18px;
+    height: 18px;
+  }
+
+  input:checked[type="checkbox"]:before {
+    left: 15px;
+  }
 }
 
-@media only screen and (max-width: 346px) {
+@media only screen and (max-width: 401px) {
   .logo {
     padding: 5px;
   }
@@ -567,5 +697,63 @@ footer {
 
   .carSpecs {
     line-height: 35px;
+  }
+
+  #chosenCarName {
+    font-size: 18px;
+  }
+
+  .textInputLabel {
+    font-size: 12px;
+  }
+
+  .accessoriesHeader {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+
+  .accessoriesListHeader {
+    font-size: 13px;
+  }
+
+  .formContent .regularText {
+    font-size: 12px;
+  }
+
+  #orderTotal {
+    font-size: 14px;
+  }
+
+  .formContent .btn {
+    padding: 10px 15px;
+  }
+
+  .customRadioLabel {
+    width: 14px;
+    height: 14px;
+    margin-left: 5px;
+    margin-right: 2px;
+  }
+
+  .textAndDateInput {
+    max-height: 22px;
+  }
+
+  input[type="checkbox"] {
+    width: 25px;
+  }
+
+  input[type="checkbox"]:before {
+    width: 17px;
+    height: 17px;
+    top: 2px;
+  }
+
+  input:checked[type="checkbox"]:before {
+    left: 12px;
+  }
+
+  .btn {
+    font-size: 12px;
   }
 }

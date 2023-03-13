@@ -7,7 +7,6 @@ const $confirmBtn = document.getElementById("confirmBtn");
 const $mainPageBtn = document.getElementById("mainPageBtn");
 
 const $searchInput = document.getElementById("searchInput");
-const $searchBtn = document.getElementById("searchBtn");
 const $carName = document.getElementsByClassName("carName");
 const $carNameSold = document.getElementsByClassName("carNameSold");
 const $carItems = document.getElementsByClassName("carItem");
@@ -36,12 +35,12 @@ const $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
 const $deliveryDate = document.getElementById("deliveryDateInput");
 const $buyerName = document.getElementById("nameInputField");
+const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
+const $emailInput = document.getElementById("emailInput");
 const $cashInput = document.getElementById("cashInput");
 const $leasingInput = document.getElementById("leasingInput");
 const $cashLabel = document.getElementById("cashLabel");
 const $leasingLabel = document.getElementById("leasingLabel");
-const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
-const $emailInput = document.getElementById("emailInput");
 
 const $chosenCarImg = document.getElementById("chosenCarImg");
 const $deliveryDateSummary = document.getElementById("deliveryDateSummary");

@@ -170,70 +170,84 @@
     <container id="shoppingCart">
       <section>
         <form id="form">
-          <h2 id="chosenCarName">Wybrane auto: </h2>
-          <div id="accessories">
+          <div class="formHeader">
+            <h2 id="chosenCarName">Wybrane auto: </h2>
+          </div>
+          <div class="formContent">
+            <div class="textInputs">
+              <div class="textInputDiv" id="nameForm">
+                <h3 class="textInputLabel">Imię i nazwisko właściciela
+                  auta: </h3>
+                <input type="text" class="textAndDateInput" name="nameInput" placeholder="Jan Kowalewski"
+                  id="nameInputField" />
+              </div>
+              <div class="textInputDiv" id="deliveryDateForm">
+                <h3 class="textInputLabel">Wybierz datę dostawy: </h3>
+                <input class="textAndDateInput" type="date" name="deliveryInput" id="deliveryDateInput" />
+              </div>
+              <div class="textInputDiv" id="deliveryAddressForm">
+                <h3 class="textInputLabel">E-mail: </h3>
+                <input type="email" class="textAndDateInput" id="emailInput" placeholder="example@example.com"
+                  name="emailInput">
+              </div>
+              <div class="textInputDiv" id="deliveryAddressForm">
+                <h3 class="textInputLabel">Wybierz adres dostawy: </h3>
+                <input type="text" class="textAndDateInput" name="deliveryInput"
+                  placeholder="ul. Przykładowa 21/2, 62-200 Gniezno" id="deliveryAddressInput" />
+              </div>
+            </div>
             <h3 class="accessoriesHeader">Akcesoria</h3>
-            <label class="regularText" for="accesoriesListInput">Dodatki i usługi do wyboru: </label>
+            <h4 class="accessoriesListHeader" id="accessoriesListHeader">Dodatki i usługi
+              do wyboru: </h4>
             <div class="accesoriesListInput">
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="tires">Opony zimowe</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="warranty">Dodatkowy rok gwarancji</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="paintJob">Lakierowanie auta</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="waxing">Woskowanie i usuwanie rys</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="upholstery">Wymiana tapicerki</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="supplies">Zestaw środków czystości AutoKar</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="supplies" />
               </div>
-              <div class="accesoryInput">
+              <div class="accessoryInput">
                 <label class="regularText" for="windscreenWipers">Wycieraczki AutoKar</label>
                 <input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers" />
               </div>
             </div>
-            <div class="accesoryInput" id="nameForm">
-              <label class="regularText" for="nameInputField">Imię i nazwisko właściciela auta: </label>
-              <input type="text" class="textAndDateInput" name="nameInput" placeholder="Jan Kowalewski"
-                id="nameInputField" />
-            </div>
-            <div class="accesoryInput" id="deliveryDateForm">
-              <label class="regularText" for="deliveryInput">Wybierz datę dostawy: </label>
-              <input class="textAndDateInput" type="date" name="deliveryInput" id="deliveryDateInput" />
-            </div>
-            <div class="accesoryInput" id="deliveryAddressForm">
-              <label class="regularText" for="deliveryInput">Wybierz adres dostawy: </label>
-              <input type="text" class="textAndDateInput" name="deliveryInput"
-                placeholder="ul. Przykładowa 21/2, 62-200 Gniezno" id="deliveryAddressInput" />
-              <div class="accesoryInput" id="deliveryAddressForm">
-                <label class="regularText" for="emailInput">E-mail: </label>
-                <input type="email" class="textAndDateInput" id="emailInput" name="emailInput">
-              </div>
-            </div>
-            <div class="accesoryInput" id="paymentForm">
+            <div class="paymentForm">
               <label class="regularText" for="paymentMethodInput">Wybierz sposób zapłaty: </label>
-              <input class="radioBtn" type="radio" name="paymentMethodInput" id="leasingInput" />
+              <label class="customRadioLabel" id="leasingLabel"><input class="radioBtn" type="radio"
+                  name="paymentMethodInput" id="leasingInput" />
+                <span class="customRadio"></span></label>
               <label class="regularText" for="leasingInput">Leasing</label>
-              <input class="radioBtn" type="radio" name="paymentMethodInput" id="cashInput" />
+              <label class="customRadioLabel" id="cashLabel"><input class="radioBtn" type="radio"
+                  name="paymentMethodInput" id="cashInput" />
+                <span class="customRadio"></span></label>
               <label class="regularText" for="cashInput">Gotówka</label>
             </div>
+            <p class="regularText" id="orderTotal">Kwota do zapłaty:</p>
+            <div class="shoppingCartBtns">
+              <button type="button" class="btn" id="backBtn">Powrót</button>
+              <button type="button" class="btn" id="confirmBtn">Zatwierdź i zapłać</button>
+            </div>
+          </div>
         </form>
-        <p class="regularText" id="orderTotal">Kwota do zapłaty:</p>
-        <div class="shoppingCartBtns">
-          <button type="button" class="btn" id="backBtn">Powrót</button>
-          <button type="button" class="btn" id="confirmBtn">Zatwierdź i zapłać</button>
+
       </section>
     </container>
     <container id="thankYouPage">
@@ -248,6 +262,5 @@
     </container>
   </div>
 </body>
-w
 
 </html>

@@ -26,18 +26,20 @@ const $chooseLotusBtn = document.getElementById("chooseLotusBtn");
 const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 
 const $form = document.getElementById("form");
-let $tiresBonus = document.getElementById("tires");
-let $warrantyBonus = document.getElementById("warranty");
-let $paintJobBonus = document.getElementById("paintJob");
-let $waxingBonus = document.getElementById("waxing");
-let $upholsteryBonus = document.getElementById("upholstery");
-let $suppliesBonus = document.getElementById("supplies");
-let $windscreenWipersBonus = document.getElementById("windscreenWipers");
+const $tiresBonus = document.getElementById("tires");
+const $warrantyBonus = document.getElementById("warranty");
+const $paintJobBonus = document.getElementById("paintJob");
+const $waxingBonus = document.getElementById("waxing");
+const $upholsteryBonus = document.getElementById("upholstery");
+const $suppliesBonus = document.getElementById("supplies");
+const $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
 const $deliveryDate = document.getElementById("deliveryDateInput");
 const $buyerName = document.getElementById("nameInputField");
 const $cashInput = document.getElementById("cashInput");
 const $leasingInput = document.getElementById("leasingInput");
+const $cashLabel = document.getElementById("cashLabel");
+const $leasingLabel = document.getElementById("leasingLabel");
 const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
 const $emailInput = document.getElementById("emailInput");
 
@@ -48,7 +50,7 @@ const $carNameSummary = document.getElementById("carNameSummary");
 
 let shoppingCartItems = [];
 let orderTotal = 0;
-let $orderTotalElement = document.getElementById("orderTotal");
+const $orderTotalElement = document.getElementById("orderTotal");
 const $orderTotalSummary = document.getElementById("orderTotalSummary");
 
 const audiCar = {
@@ -167,7 +169,7 @@ $chooseAudiBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Rs6 Avant.jpg");
   $chosenCarImg.setAttribute("alt", "Rs6 Avant");
   orderTotal += audiCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -178,7 +180,7 @@ $choosePeugeotBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/407.jpg");
   $chosenCarImg.setAttribute("alt", "Peugeot 407");
   orderTotal += peugeotCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -189,7 +191,7 @@ $chooseFordBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Focus.jpg");
   $chosenCarImg.setAttribute("alt", "Ford Focus Hatchback");
   orderTotal += fordCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -200,7 +202,7 @@ $chooseFiatBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Fiat 500.jpg");
   $chosenCarImg.setAttribute("alt", "Fiat 500");
   orderTotal += fiatCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -211,7 +213,7 @@ $chooseOpelBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Opel Astra.jpg");
   $chosenCarImg.setAttribute("alt", "Opel Astra");
   orderTotal += opelCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -222,7 +224,7 @@ $chooseCitroenBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Citroen 2CV.jpg");
   $chosenCarImg.setAttribute("alt", "Citroen 2CV");
   orderTotal += citroenCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -233,7 +235,7 @@ $chooseLotusBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Lotus Elise.jpg");
   $chosenCarImg.setAttribute("alt", "Lotus Elise 111R");
   orderTotal += lotusCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -244,7 +246,7 @@ $chooseLexusBtn.addEventListener("click", function () {
   $chosenCarImg.setAttribute("src", "img/Lexus ES.jpg");
   $chosenCarImg.setAttribute("alt", "Lexus ES");
   orderTotal += lexusCar.price;
-  $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   console.log(shoppingCartItems);
 });
 
@@ -253,11 +255,11 @@ $tiresBonus.addEventListener("click", function () {
   if ($tiresBonus.checked) {
     shoppingCartItems.push(tiresBonus);
     orderTotal += tiresBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($tiresBonus.checked === false) {
     shoppingCartItems.pop(tiresBonus);
     orderTotal -= tiresBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -266,11 +268,11 @@ $warrantyBonus.addEventListener("click", function () {
   if ($warrantyBonus.checked) {
     shoppingCartItems.push(warrantyBonus);
     orderTotal += warrantyBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($warrantyBonus.checked === false) {
     shoppingCartItems.pop(warrantyBonus);
     orderTotal -= warrantyBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -279,11 +281,11 @@ $paintJobBonus.addEventListener("click", function () {
   if ($paintJobBonus.checked) {
     shoppingCartItems.push(paintJobBonus);
     orderTotal += paintJobBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($paintJobBonus.checked === false) {
     shoppingCartItems.pop(paintJobBonus);
     orderTotal -= paintJobBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -292,11 +294,11 @@ $waxingBonus.addEventListener("click", function () {
   if ($waxingBonus.checked) {
     shoppingCartItems.push(waxingBonus);
     orderTotal += waxingBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($waxingBonus.checked === false) {
     shoppingCartItems.pop(waxingBonus);
     orderTotal -= waxingBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -305,11 +307,11 @@ $upholsteryBonus.addEventListener("click", function () {
   if ($upholsteryBonus.checked) {
     shoppingCartItems.push(upholsteryBonus);
     orderTotal += upholsteryBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($upholsteryBonus.checked === false) {
     shoppingCartItems.pop(upholsteryBonus);
     orderTotal -= upholsteryBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -318,11 +320,11 @@ $suppliesBonus.addEventListener("click", function () {
   if ($suppliesBonus.checked) {
     shoppingCartItems.push(cleaningSuppliesBonus);
     orderTotal += cleaningSuppliesBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($suppliesBonus.checked === false) {
     shoppingCartItems.pop(cleaningSuppliesBonus);
     orderTotal -= cleaningSuppliesBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -335,11 +337,11 @@ $windscreenWipersBonus.addEventListener("click", function () {
   if ($windscreenWipersBonus.checked) {
     shoppingCartItems.push(windscreenWipersBonus);
     orderTotal += windscreenWipersBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($windscreenWipersBonus.checked === false) {
     shoppingCartItems.pop(windscreenWipersBonus);
     orderTotal -= windscreenWipersBonus.price;
-    $orderTotalElement.innerText = "Kwota do zapłaty: " + orderTotal;
+    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -352,6 +354,10 @@ $backBtn.addEventListener("click", function () {
 
 $buyerName.addEventListener("keyup", function () {
   localStorage.setItem("buyerName", $buyerName.value);
+});
+
+$emailInput.addEventListener("keyup", function () {
+  localStorage.setItem("email", $emailInput.value);
 });
 
 $deliveryDate.addEventListener("change", function () {
@@ -386,6 +392,7 @@ function loadLocalStorage() {
       localStorage.getItem("windscreenWipersChoice")
     );
     $buyerName.value = localStorage.getItem("buyerName");
+    $emailInput.value = localStorage.getItem("email");
     $deliveryDate.value = localStorage.getItem("deliveryDate");
     $deliveryAddressInput.value = localStorage.getItem("deliveryAddress");
     $cashInput.checked = JSON.parse(localStorage.getItem("cashInput"));
@@ -396,7 +403,7 @@ function loadLocalStorage() {
 for (let i = 0; i < $buyBtns.length; i++) {
   $buyBtns[i].addEventListener("click", function () {
     $mainPage.style.display = "none";
-    $shoppingCartPage.style.display = "flex";
+    $shoppingCartPage.style.display = "block";
     loadLocalStorage();
   });
 }
@@ -528,13 +535,13 @@ function checkForm() {
       $form.removeChild(emptyError);
     }, 4600);
     $deliveryAddressInput.setAttribute("class", "errorHihglight");
-    $cashInput.setAttribute("class", "errorHihglight");
-    $leasingInput.setAttribute("class", "errorHihglight");
+    $cashLabel.setAttribute("class", "errorHihglightRadio");
+    $leasingLabel.setAttribute("class", "errorHihglightRadio");
     $emailInput.setAttribute("class", "errorHihglight");
   } else if (isFilled()) {
     $deliveryAddressInput.setAttribute("class", "defaultInput");
-    $cashInput.setAttribute("class", "defaultInput");
-    $leasingInput.setAttribute("class", "defaultInput");
+    $cashLabel.setAttribute("class", "customRadioLabel");
+    $leasingLabel.setAttribute("class", "customRadioLabel");
     $emailInput.setAttribute("class", "defaultInput");
   }
 }
@@ -552,6 +559,7 @@ $mainPageBtn.addEventListener("click", function () {
   $suppliesBonus.checked = false;
   $windscreenWipersBonus.checked = false;
   $buyerName.value = null;
+  $emailInput.value = null;
   $deliveryAddressInput.value = null;
   $deliveryDate.value = null;
   $leasingInput.checked = false;

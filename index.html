@@ -165,7 +165,7 @@
           <button class="buyBtn" id="chooseLexusBtn">Wybierz</button>
         </div>
       </main>
-      <footer>&copy Copyright 2023</footer>
+      <footer>&copy Karol Gospodarek 2023</footer>
     </container>
     <container id="shoppingCart">
       <section>
@@ -173,7 +173,7 @@
           <div class="formHeader">
             <h2 id="chosenCarName">Wybrane auto: </h2>
           </div>
-          <div class="formContent">
+          <div id="formContent">
             <div class="textInputs">
               <div class="textInputDiv" id="nameForm">
                 <h3 class="textInputLabel">Imię i nazwisko: </h3>
@@ -240,6 +240,7 @@
               <label class="regularText" for="cashInput">Gotówka</label>
             </div>
             <p class="regularText" id="orderTotal">Kwota do zapłaty:</p>
+            <div id="errorMessages"></div>
             <div class="shoppingCartBtns">
               <button type="button" class="btn" id="backBtn">Powrót</button>
               <button type="button" class="btn" id="confirmBtn">Zatwierdź i zapłać</button>
@@ -251,12 +252,14 @@
     </container>
     <container id="thankYouPage">
       <section>
-        <h1 class="chosenCarName" id="carNameSummary">Dziękujemy za zakup</h1>
-        <img class="chosenCarImg" id="chosenCarImg">
-        <p class="regularText" id="paymentMethodSummary">Wybrana metoda płatności: </p>
-        <p class="regularText" id="orderTotalSummary">Zapłacono:</p>
-        <p class="regularText" id="deliveryDateSummary">Termin dostawy:</p>
-        <button class="btn" id="mainPageBtn">Powrót do strony głównej</button>
+        <div class="summary">
+          <h1 class="carNameSummary" id="carNameSummary">Dziękujemy za zakup</h1>
+          <img class="chosenCarImg" id="chosenCarImg">
+          <p class="regularText" id="paymentMethodSummary">Wybrana metoda płatności: </p>
+          <p class="regularText" id="orderTotalSummary">Zapłacono:</p>
+          <p class="regularText" id="deliveryDateSummary">Termin dostawy:</p>
+          <button class="btn" id="mainPageBtn">Powrót do strony głównej</button>
+        </div>
       </section>
     </container>
   </div>

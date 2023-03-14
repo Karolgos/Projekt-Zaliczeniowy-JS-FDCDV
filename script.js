@@ -24,7 +24,7 @@ const $chooseMazdaBtn = document.getElementById("chooseMazdaBtn");
 const $chooseLotusBtn = document.getElementById("chooseLotusBtn");
 const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 
-const $form = document.getElementById("form");
+const $errorMessages = document.getElementById("errorMessages");
 const $tiresBonus = document.getElementById("tires");
 const $warrantyBonus = document.getElementById("warranty");
 const $paintJobBonus = document.getElementById("paintJob");
@@ -489,13 +489,13 @@ function checkForm() {
     nameError.innerText = "Proszę wprowadzić poprawne imię i nazwisko.";
     nameError.setAttribute("class", "errorMessage");
     nameError.setAttribute("id", "nameError");
-    $form.appendChild(nameError);
+    $errorMessages.appendChild(nameError);
     setTimeout(() => {
       document.getElementById("nameError").style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
     }, 4000);
     setTimeout(() => {
-      $form.removeChild(nameError);
+      $errorMessages.removeChild(nameError);
     }, 4600);
     $buyerName.setAttribute("class", "errorHihglight");
   } else if (checkName()) {
@@ -507,14 +507,14 @@ function checkForm() {
     dateError.innerText = "Data dostawy to minimum 14 dni.";
     dateError.setAttribute("class", "errorMessage");
     dateError.setAttribute("id", "dateError");
-    $form.appendChild(dateError);
+    $errorMessages.appendChild(dateError);
     $deliveryDate.setAttribute("class", "errorHihglight");
     setTimeout(() => {
       document.getElementById("dateError").style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
     }, 4000);
     setTimeout(() => {
-      $form.removeChild(dateError);
+      $errorMessages.removeChild(dateError);
     }, 4600);
   } else if (checkDate()) {
     $deliveryDate.setAttribute("class", "defaultInput");
@@ -525,13 +525,13 @@ function checkForm() {
     emptyError.innerText = "Pola nie mogą być puste.";
     emptyError.setAttribute("class", "errorMessage");
     emptyError.setAttribute("id", "emptyError");
-    $form.appendChild(emptyError);
+    $errorMessages.appendChild(emptyError);
     setTimeout(() => {
       document.getElementById("emptyError").style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
     }, 4000);
     setTimeout(() => {
-      $form.removeChild(emptyError);
+      $errorMessages.removeChild(emptyError);
     }, 4600);
     $deliveryAddressInput.setAttribute("class", "errorHihglight");
     $cashLabel.setAttribute("class", "errorHihglightRadio");

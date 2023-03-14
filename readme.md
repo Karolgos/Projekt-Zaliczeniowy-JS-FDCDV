@@ -1,6 +1,4 @@
-Upewnij się, że plik ten zawsze zawiera następujące elementy:
-
-Tytuł i śródtytuły
+<!-- Tytuł i śródtytuły
 Wprowadzenie – cel projektu
 Technologie
 Uruchomienie
@@ -13,4 +11,9 @@ Zakres funkcjonalności
 Przykłady użycia
 Status projektu
 Źródła
-Inne informacje
+Inne informacje -->
+
+#AutoKar - a mock website
+A website for buying cars from the AutoKar dealership
+
+##Table of contents

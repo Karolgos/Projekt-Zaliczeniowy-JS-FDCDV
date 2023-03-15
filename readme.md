@@ -47,4 +47,5 @@ A lot could possibly be done in terms of code optimisation and shortening. It wo
 - Car specs icons come from Fontawesome
 - Boxs shadows come from [here](https://getcssscan.com/css-box-shadow-examples)
 - Some of the colors were inspired by the color palette generator at [Coolors.co](https://coolors.co/)
-- Readme stworzone w oparciu o wpis na [blogu Fly Nerd](https://www.flynerd.pl/2018/06/jak-napisac-dobre-readme-projektu-na-githubie.html)
+- Readme created according to the [Fly Nerd blog post](https://www.flynerd.pl/2018/06/jak-napisac-dobre-readme-projektu-na-githubie.html)
+- Additional help came from W3Schools

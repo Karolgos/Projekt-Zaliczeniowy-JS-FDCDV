@@ -33,6 +33,7 @@ const $upholsteryBonus = document.getElementById("upholstery");
 const $suppliesBonus = document.getElementById("supplies");
 const $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
+const $chosenCarName = document.getElementById("chosenCarName");
 const $deliveryDate = document.getElementById("deliveryDateInput");
 const $buyerName = document.getElementById("nameInputField");
 const $deliveryAddressInput = document.getElementById("deliveryAddressInput");
@@ -49,57 +50,67 @@ const $carNameSummary = document.getElementById("carNameSummary");
 
 let shoppingCartItems = [];
 let orderTotal = 0;
-const $orderTotalElement = document.getElementById("orderTotal");
+const $orderTotal = document.getElementById("orderTotal");
 const $orderTotalSummary = document.getElementById("orderTotalSummary");
 
 const audiCar = {
   name: "Audi RS6 Avant",
   price: 249900,
+  img: "./img/Rs6 Avant.jpg",
 };
 
 const peugeotCar = {
   name: "Peugeot 407",
   price: 18999,
+  img: "./img/407.jpg",
 };
 
 const fordCar = {
   name: "Ford Focus Hatchback",
   price: 40959,
+  img: "./img/Focus.jpg",
 };
 
 const fiatCar = {
   name: "Fiat 500",
   price: 30500,
+  img: "./img/Fiat 500.jpg",
 };
 
 const miniCar = {
   name: "Mini Cooper",
   price: 38900,
+  img: "./img/Mini Cooper.jpg",
 };
 
 const opelCar = {
   name: "Opel Astra",
   price: 30900,
+  img: "./img/Opel Astra.jpg",
 };
 
 const citroenCar = {
   name: "Citroën 2CV",
   price: 94000,
+  img: "./img/Citroen 2CV.jpg",
 };
 
 const mazdaCar = {
   name: "Mazda Rx-7",
   price: 120000,
+  img: "./img/Mazda rx7.jpg",
 };
 
 const lotusCar = {
   name: "Lotus Elise 111R",
   price: 69900,
+  img: "./img/Lotus Elise.jpg",
 };
 
 const lexusCar = {
   name: "Lexus ES",
   price: 199999,
+  img: "./img/Lexus ES.jpg",
 };
 
 const tiresBonus = {
@@ -163,90 +174,34 @@ $searchInput.addEventListener("keyup", search);
 
 $chooseAudiBtn.addEventListener("click", function () {
   shoppingCartItems.push(audiCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + audiCar.name;
-  $chosenCarImg.setAttribute("src", "img/Rs6 Avant.jpg");
-  $chosenCarImg.setAttribute("alt", "Rs6 Avant");
-  orderTotal += audiCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $choosePeugeotBtn.addEventListener("click", function () {
   shoppingCartItems.push(peugeotCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + peugeotCar.name;
-  $chosenCarImg.setAttribute("src", "img/407.jpg");
-  $chosenCarImg.setAttribute("alt", "Peugeot 407");
-  orderTotal += peugeotCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseFordBtn.addEventListener("click", function () {
   shoppingCartItems.push(fordCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + fordCar.name;
-  $chosenCarImg.setAttribute("src", "img/Focus.jpg");
-  $chosenCarImg.setAttribute("alt", "Ford Focus Hatchback");
-  orderTotal += fordCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseFiatBtn.addEventListener("click", function () {
   shoppingCartItems.push(fiatCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + fiatCar.name;
-  $chosenCarImg.setAttribute("src", "img/Fiat 500.jpg");
-  $chosenCarImg.setAttribute("alt", "Fiat 500");
-  orderTotal += fiatCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseOpelBtn.addEventListener("click", function () {
   shoppingCartItems.push(opelCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + opelCar.name;
-  $chosenCarImg.setAttribute("src", "img/Opel Astra.jpg");
-  $chosenCarImg.setAttribute("alt", "Opel Astra");
-  orderTotal += opelCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseCitroenBtn.addEventListener("click", function () {
   shoppingCartItems.push(citroenCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + citroenCar.name;
-  $chosenCarImg.setAttribute("src", "img/Citroen 2CV.jpg");
-  $chosenCarImg.setAttribute("alt", "Citroen 2CV");
-  orderTotal += citroenCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseLotusBtn.addEventListener("click", function () {
   shoppingCartItems.push(lotusCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + lotusCar.name;
-  $chosenCarImg.setAttribute("src", "img/Lotus Elise.jpg");
-  $chosenCarImg.setAttribute("alt", "Lotus Elise 111R");
-  orderTotal += lotusCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $chooseLexusBtn.addEventListener("click", function () {
   shoppingCartItems.push(lexusCar);
-  document.getElementById("chosenCarName").innerText =
-    "Wybrane auto: " + lexusCar.name;
-  $chosenCarImg.setAttribute("src", "img/Lexus ES.jpg");
-  $chosenCarImg.setAttribute("alt", "Lexus ES");
-  orderTotal += lexusCar.price;
-  $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
 });
 
 $tiresBonus.addEventListener("click", function () {
@@ -254,11 +209,11 @@ $tiresBonus.addEventListener("click", function () {
   if ($tiresBonus.checked) {
     shoppingCartItems.push(tiresBonus);
     orderTotal += tiresBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($tiresBonus.checked === false) {
     shoppingCartItems.pop(tiresBonus);
     orderTotal -= tiresBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -267,11 +222,11 @@ $warrantyBonus.addEventListener("click", function () {
   if ($warrantyBonus.checked) {
     shoppingCartItems.push(warrantyBonus);
     orderTotal += warrantyBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($warrantyBonus.checked === false) {
     shoppingCartItems.pop(warrantyBonus);
     orderTotal -= warrantyBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -280,11 +235,11 @@ $paintJobBonus.addEventListener("click", function () {
   if ($paintJobBonus.checked) {
     shoppingCartItems.push(paintJobBonus);
     orderTotal += paintJobBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($paintJobBonus.checked === false) {
     shoppingCartItems.pop(paintJobBonus);
     orderTotal -= paintJobBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -293,11 +248,11 @@ $waxingBonus.addEventListener("click", function () {
   if ($waxingBonus.checked) {
     shoppingCartItems.push(waxingBonus);
     orderTotal += waxingBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($waxingBonus.checked === false) {
     shoppingCartItems.pop(waxingBonus);
     orderTotal -= waxingBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -306,11 +261,11 @@ $upholsteryBonus.addEventListener("click", function () {
   if ($upholsteryBonus.checked) {
     shoppingCartItems.push(upholsteryBonus);
     orderTotal += upholsteryBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($upholsteryBonus.checked === false) {
     shoppingCartItems.pop(upholsteryBonus);
     orderTotal -= upholsteryBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -319,11 +274,11 @@ $suppliesBonus.addEventListener("click", function () {
   if ($suppliesBonus.checked) {
     shoppingCartItems.push(cleaningSuppliesBonus);
     orderTotal += cleaningSuppliesBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($suppliesBonus.checked === false) {
     shoppingCartItems.pop(cleaningSuppliesBonus);
     orderTotal -= cleaningSuppliesBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -336,11 +291,11 @@ $windscreenWipersBonus.addEventListener("click", function () {
   if ($windscreenWipersBonus.checked) {
     shoppingCartItems.push(windscreenWipersBonus);
     orderTotal += windscreenWipersBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   } else if ($windscreenWipersBonus.checked === false) {
     shoppingCartItems.pop(windscreenWipersBonus);
     orderTotal -= windscreenWipersBonus.price;
-    $orderTotalElement.innerText = `Kwota do zapłaty: ${orderTotal}`;
+    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
   }
 });
 
@@ -399,12 +354,18 @@ function loadLocalStorage() {
   }
 }
 
+function addCar() {
+  $mainPage.style.display = "none";
+  $shoppingCartPage.style.display = "block";
+  loadLocalStorage();
+  $chosenCarName.innerText = `Wybrane auto: ${shoppingCartItems[0].name}`;
+  orderTotal += shoppingCartItems[0].price;
+  $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
+  console.log(shoppingCartItems);
+}
+
 for (let i = 0; i < $buyBtns.length; i++) {
-  $buyBtns[i].addEventListener("click", function () {
-    $mainPage.style.display = "none";
-    $shoppingCartPage.style.display = "block";
-    loadLocalStorage();
-  });
+  $buyBtns[i].addEventListener("click", addCar);
 }
 
 function checkDate() {
@@ -460,6 +421,7 @@ function isFilled() {
     $buyerName.value.length > 4 &&
     $deliveryAddressInput.value.length > 5 &&
     $emailInput.value.length > 3 &&
+    $emailInput.value.indexOf(" ") !== -1 &&
     ($leasingInput.checked || $cashInput.checked)
   ) {
     console.log("pola wypelnione");
@@ -475,6 +437,7 @@ function checkForm() {
     $shoppingCartPage.style.display = "none";
     $thankYouPage.style.display = "block";
     $carNameSummary.innerText = `Dziękujemy za zakup ${shoppingCartItems[0].name}`;
+    $chosenCarImg.setAttribute("src", shoppingCartItems[0].img);
     $orderTotalSummary.innerText = `Zapłacono ${orderTotal} PLN`;
     $deliveryDateSummary.innerText = `Termin dostawy: ${$deliveryDate.value}`;
     if ($leasingInput.checked) {
@@ -482,16 +445,31 @@ function checkForm() {
     } else if ($cashInput.checked) {
       $paymentMethodSummary.innerText = `Wybrana metoda płatności: Gotówka`;
     }
+    $tiresBonus.checked = false;
+    $warrantyBonus.checked = false;
+    $paintJobBonus.checked = false;
+    $waxingBonus.checked = false;
+    $upholsteryBonus.checked = false;
+    $suppliesBonus.checked = false;
+    $windscreenWipersBonus.checked = false;
+    $buyerName.value = null;
+    $emailInput.value = null;
+    $deliveryAddressInput.value = null;
+    $deliveryDate.value = null;
+    $leasingInput.checked = false;
+    $cashInput.checked = false;
+    shoppingCartItems = [];
+    orderTotal = 0;
+    localStorage.clear();
   }
 
   if (checkName() === false) {
     const nameError = document.createElement("p");
-    nameError.innerText = "Proszę wprowadzić poprawne imię i nazwisko.";
+    nameError.innerText = `Proszę wprowadzić poprawne imię i nazwisko.`;
     nameError.setAttribute("class", "errorMessage");
-    nameError.setAttribute("id", "nameError");
     $errorMessages.appendChild(nameError);
     setTimeout(() => {
-      document.getElementById("nameError").style.cssText +=
+      nameError.style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
     }, 4000);
     setTimeout(() => {
@@ -504,44 +482,42 @@ function checkForm() {
 
   if (checkDate() === false) {
     const dateError = document.createElement("p");
-    dateError.innerText = "Data dostawy to minimum 14 dni.";
+    dateError.innerText = `Data dostawy to minimum 14 dni.`;
     dateError.setAttribute("class", "errorMessage");
-    dateError.setAttribute("id", "dateError");
     $errorMessages.appendChild(dateError);
     $deliveryDate.setAttribute("class", "errorHihglight");
     setTimeout(() => {
-      document.getElementById("dateError").style.cssText +=
+      dateError.style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
-    }, 4000);
+    }, 3750);
     setTimeout(() => {
       $errorMessages.removeChild(dateError);
-    }, 4600);
+    }, 4400);
   } else if (checkDate()) {
     $deliveryDate.setAttribute("class", "defaultInput");
   }
 
   if (isFilled() === false) {
     const emptyError = document.createElement("p");
-    emptyError.innerText = "Pola nie mogą być puste.";
+    emptyError.innerText = `Pola są puste lub adres e-mail jest niepoprawny.`;
     emptyError.setAttribute("class", "errorMessage");
-    emptyError.setAttribute("id", "emptyError");
     $errorMessages.appendChild(emptyError);
     setTimeout(() => {
-      document.getElementById("emptyError").style.cssText +=
+      emptyError.style.cssText +=
         "visibility: hidden;opacity: 0;transition: visibility 0.5s, opacity 0.5s linear;";
-    }, 4000);
+    }, 3750);
     setTimeout(() => {
       $errorMessages.removeChild(emptyError);
-    }, 4600);
+    }, 4400);
     $deliveryAddressInput.setAttribute("class", "errorHihglight");
+    $emailInput.setAttribute("class", "errorHihglight");
     $cashLabel.setAttribute("class", "errorHihglightRadio");
     $leasingLabel.setAttribute("class", "errorHihglightRadio");
-    $emailInput.setAttribute("class", "errorHihglight");
   } else if (isFilled()) {
     $deliveryAddressInput.setAttribute("class", "defaultInput");
+    $emailInput.setAttribute("class", "defaultInput");
     $cashLabel.setAttribute("class", "customRadioLabel");
     $leasingLabel.setAttribute("class", "customRadioLabel");
-    $emailInput.setAttribute("class", "defaultInput");
   }
 }
 
@@ -550,20 +526,4 @@ $confirmBtn.addEventListener("click", checkForm);
 $mainPageBtn.addEventListener("click", function () {
   $thankYouPage.style.display = "none";
   $mainPage.style.display = "block";
-  $tiresBonus.checked = false;
-  $warrantyBonus.checked = false;
-  $paintJobBonus.checked = false;
-  $waxingBonus.checked = false;
-  $upholsteryBonus.checked = false;
-  $suppliesBonus.checked = false;
-  $windscreenWipersBonus.checked = false;
-  $buyerName.value = null;
-  $emailInput.value = null;
-  $deliveryAddressInput.value = null;
-  $deliveryDate.value = null;
-  $leasingInput.checked = false;
-  $cashInput.checked = false;
-  shoppingCartItems = [];
-  orderTotal = 0;
-  localStorage.clear();
 });

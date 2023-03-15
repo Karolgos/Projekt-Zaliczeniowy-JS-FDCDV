@@ -421,7 +421,7 @@ function isFilled() {
     $buyerName.value.length > 4 &&
     $deliveryAddressInput.value.length > 5 &&
     $emailInput.value.length > 3 &&
-    $emailInput.value.indexOf(" ") !== -1 &&
+    $emailInput.value.indexOf("@") !== -1 &&
     ($leasingInput.checked || $cashInput.checked)
   ) {
     console.log("pola wypelnione");

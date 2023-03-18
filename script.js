@@ -8,7 +8,6 @@ const $mainPageBtn = document.getElementById("mainPageBtn");
 
 const $searchInput = document.getElementById("searchInput");
 const $carName = document.getElementsByClassName("carName");
-const $carNameSold = document.getElementsByClassName("carNameSold");
 const $carItems = document.getElementsByClassName("carItem");
 const $carItemsSold = document.getElementsByClassName("carItemSold");
 
@@ -16,13 +15,6 @@ const $buyBtns = document.getElementsByClassName("buyBtn");
 
 const $accessoryCheck = document.getElementsByClassName("accessoryItem");
 const $errorMessages = document.getElementById("errorMessages");
-const $tiresBonus = document.getElementById("tires");
-const $warrantyBonus = document.getElementById("warranty");
-const $paintJobBonus = document.getElementById("paintJob");
-const $waxingBonus = document.getElementById("waxing");
-const $upholsteryBonus = document.getElementById("upholstery");
-const $suppliesBonus = document.getElementById("cleaningSupplies");
-const $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
 const $chosenCarName = document.getElementById("chosenCarName");
 const $deliveryDate = document.getElementById("deliveryDateInput");
@@ -400,13 +392,9 @@ $confirmBtn.addEventListener("click", checkForm);
 $mainPageBtn.addEventListener("click", function () {
   $thankYouPage.style.display = "none";
   $mainPage.style.display = "block";
-  $tiresBonus.checked = false;
-  $warrantyBonus.checked = false;
-  $paintJobBonus.checked = false;
-  $waxingBonus.checked = false;
-  $upholsteryBonus.checked = false;
-  $suppliesBonus.checked = false;
-  $windscreenWipersBonus.checked = false;
+  for (let i = 0; i < $accessoryCheck.length; i++) {
+    $accessoryCheck[i].checked = false;
+  }
   $buyerName.value = null;
   $emailInput.value = null;
   $deliveryAddressInput.value = null;

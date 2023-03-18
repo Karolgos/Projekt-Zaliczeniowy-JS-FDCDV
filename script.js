@@ -13,24 +13,15 @@ const $carItems = document.getElementsByClassName("carItem");
 const $carItemsSold = document.getElementsByClassName("carItemSold");
 
 const $buyBtns = document.getElementsByClassName("buyBtn");
-const $chooseAudiBtn = document.getElementById("chooseAudiBtn");
-const $choosePeugeotBtn = document.getElementById("choosePeugeotBtn");
-const $chooseFordBtn = document.getElementById("chooseFordBtn");
-const $chooseFiatBtn = document.getElementById("chooseFiatBtn");
-const $chooseMiniBtn = document.getElementById("chooseMiniBtn");
-const $chooseOpelBtn = document.getElementById("chooseOpelBtn");
-const $chooseCitroenBtn = document.getElementById("chooseCitroenBtn");
-const $chooseMazdaBtn = document.getElementById("chooseMazdaBtn");
-const $chooseLotusBtn = document.getElementById("chooseLotusBtn");
-const $chooseLexusBtn = document.getElementById("chooseLexusBtn");
 
+const $accessoryCheck = document.getElementsByClassName("accessoryItem");
 const $errorMessages = document.getElementById("errorMessages");
 const $tiresBonus = document.getElementById("tires");
 const $warrantyBonus = document.getElementById("warranty");
 const $paintJobBonus = document.getElementById("paintJob");
 const $waxingBonus = document.getElementById("waxing");
 const $upholsteryBonus = document.getElementById("upholstery");
-const $suppliesBonus = document.getElementById("supplies");
+const $suppliesBonus = document.getElementById("cleaningSupplies");
 const $windscreenWipersBonus = document.getElementById("windscreenWipers");
 
 const $chosenCarName = document.getElementById("chosenCarName");
@@ -53,105 +44,94 @@ let orderTotal = 0;
 const $orderTotal = document.getElementById("orderTotal");
 const $orderTotalSummary = document.getElementById("orderTotalSummary");
 
-const audiCar = {
-  name: "Audi RS6 Avant",
-  price: 249900,
-  img: "./img/Rs6 Avant.jpg",
-};
+const cars = [
+  (audiCar = {
+    name: "Audi RS6 Avant",
+    price: 249900,
+    img: "./img/Rs6 Avant.jpg",
+  }),
+  (peugeotCar = {
+    name: "Peugeot 407",
+    price: 18999,
+    img: "./img/407.jpg",
+  }),
+  (fordCar = {
+    name: "Ford Focus Hatchback",
+    price: 40959,
+    img: "./img/Focus.jpg",
+  }),
+  (fiatCar = {
+    name: "Fiat 500",
+    price: 30500,
+    img: "./img/Fiat 500.jpg",
+  }),
+  (miniCar = {
+    name: "Mini Cooper",
+    price: 38900,
+    img: "./img/Mini Cooper.jpg",
+  }),
+  (opelCar = {
+    name: "Opel Astra",
+    price: 30900,
+    img: "./img/Opel Astra.jpg",
+  }),
+  (citroenCar = {
+    name: "Citroën 2CV",
+    price: 94000,
+    img: "./img/Citroen 2CV.jpg",
+  }),
+  (mazdaCar = {
+    name: "Mazda Rx-7",
+    price: 120000,
+    img: "./img/Mazda rx7.jpg",
+  }),
+  (lotusCar = {
+    name: "Lotus Elise 111R",
+    price: 69900,
+    img: "./img/Lotus Elise.jpg",
+  }),
+  (lexusCar = {
+    name: "Lexus ES",
+    price: 199999,
+    img: "./img/Lexus ES.jpg",
+  }),
+];
 
-const peugeotCar = {
-  name: "Peugeot 407",
-  price: 18999,
-  img: "./img/407.jpg",
-};
-
-const fordCar = {
-  name: "Ford Focus Hatchback",
-  price: 40959,
-  img: "./img/Focus.jpg",
-};
-
-const fiatCar = {
-  name: "Fiat 500",
-  price: 30500,
-  img: "./img/Fiat 500.jpg",
-};
-
-const miniCar = {
-  name: "Mini Cooper",
-  price: 38900,
-  img: "./img/Mini Cooper.jpg",
-};
-
-const opelCar = {
-  name: "Opel Astra",
-  price: 30900,
-  img: "./img/Opel Astra.jpg",
-};
-
-const citroenCar = {
-  name: "Citroën 2CV",
-  price: 94000,
-  img: "./img/Citroen 2CV.jpg",
-};
-
-const mazdaCar = {
-  name: "Mazda Rx-7",
-  price: 120000,
-  img: "./img/Mazda rx7.jpg",
-};
-
-const lotusCar = {
-  name: "Lotus Elise 111R",
-  price: 69900,
-  img: "./img/Lotus Elise.jpg",
-};
-
-const lexusCar = {
-  name: "Lexus ES",
-  price: 199999,
-  img: "./img/Lexus ES.jpg",
-};
-
-const tiresBonus = {
-  name: "Opony zimowe",
-  price: 800,
-};
-
-const warrantyBonus = {
-  name: "Dodatkowy rok gwarancji",
-  price: 1000,
-};
-
-const paintJobBonus = {
-  name: "Lakierowanie auta",
-  price: 6000,
-};
-
-const waxingBonus = {
-  name: "Woskowanie i usuwanie rys",
-  price: 250,
-};
-
-const upholsteryBonus = {
-  name: "Wymiana tapicerki",
-  price: 7500,
-};
-
-const cleaningSuppliesBonus = {
-  name: "Środki czystości AutoKar",
-  price: 100,
-};
-
-const windscreenWipersBonus = {
-  name: "Wycieraczki AutoKar",
-  price: 75,
-};
+const accessories = [
+  (tiresBonus = {
+    name: "Opony zimowe",
+    price: 800,
+  }),
+  (warrantyBonus = {
+    name: "Dodatkowy rok gwarancji",
+    price: 1000,
+  }),
+  (paintJobBonus = {
+    name: "Lakierowanie auta",
+    price: 6000,
+  }),
+  (waxingBonus = {
+    name: "Woskowanie i usuwanie rys",
+    price: 250,
+  }),
+  (upholsteryBonus = {
+    name: "Wymiana tapicerki",
+    price: 7500,
+  }),
+  (cleaningSuppliesBonus = {
+    name: "Środki czystości AutoKar",
+    price: 100,
+  }),
+  (windscreenWipersBonus = {
+    name: "Wycieraczki AutoKar",
+    price: 75,
+  }),
+];
 
 function search() {
   let filter = $searchInput.value.toUpperCase();
 
-  for (i = 0; i < $carName.length; i++) {
+  for (let i = 0; i < $carName.length; i++) {
     let txtValue = $carName[i].textContent || $carName[i].innerText;
     if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue.length === 0) {
       $carItems[i].style.display = "grid";
@@ -159,145 +139,98 @@ function search() {
       $carItems[i].style.display = "none";
     }
   }
-
-  for (i = 0; i < $carNameSold.length; i++) {
-    let txtValue = $carNameSold[i].textContent || $carName[i].innerText;
-    if (txtValue.toUpperCase().indexOf(filter) > -1 || txtValue.length === 0) {
-      $carItemsSold[i].style.display = "grid";
-    } else {
-      $carItemsSold[i].style.display = "none";
-    }
-  }
 }
 
 $searchInput.addEventListener("keyup", search);
 
-$chooseAudiBtn.addEventListener("click", function () {
-  shoppingCartItems.push(audiCar);
-});
-
-$choosePeugeotBtn.addEventListener("click", function () {
-  shoppingCartItems.push(peugeotCar);
-});
-
-$chooseFordBtn.addEventListener("click", function () {
-  shoppingCartItems.push(fordCar);
-});
-
-$chooseFiatBtn.addEventListener("click", function () {
-  shoppingCartItems.push(fiatCar);
-});
-
-$chooseOpelBtn.addEventListener("click", function () {
-  shoppingCartItems.push(opelCar);
-});
-
-$chooseCitroenBtn.addEventListener("click", function () {
-  shoppingCartItems.push(citroenCar);
-});
-
-$chooseLotusBtn.addEventListener("click", function () {
-  shoppingCartItems.push(lotusCar);
-});
-
-$chooseLexusBtn.addEventListener("click", function () {
-  shoppingCartItems.push(lexusCar);
-});
-
-$tiresBonus.addEventListener("click", function () {
-  localStorage.setItem("tiresChoice", $tiresBonus.checked);
-  if ($tiresBonus.checked) {
-    shoppingCartItems.push(tiresBonus);
-    orderTotal += tiresBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($tiresBonus.checked === false) {
-    shoppingCartItems.pop(tiresBonus);
-    orderTotal -= tiresBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
+function loadLocalStorage() {
+  if (localStorage.length > 0) {
+    $buyerName.value = localStorage.getItem("buyerName");
+    $emailInput.value = localStorage.getItem("email");
+    $deliveryDate.value = localStorage.getItem("deliveryDate");
+    $deliveryAddressInput.value = localStorage.getItem("deliveryAddress");
+    $cashInput.checked = JSON.parse(localStorage.getItem("cashInput"));
+    $leasingInput.checked = JSON.parse(localStorage.getItem("leasingInput"));
   }
-});
+}
 
-$warrantyBonus.addEventListener("click", function () {
-  localStorage.setItem("warrantyChoice", $warrantyBonus.checked);
-  if ($warrantyBonus.checked) {
-    shoppingCartItems.push(warrantyBonus);
-    orderTotal += warrantyBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($warrantyBonus.checked === false) {
-    shoppingCartItems.pop(warrantyBonus);
-    orderTotal -= warrantyBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
+for (let i = 0; i < $buyBtns.length; i++) {
+  $buyBtns[i].addEventListener("click", (e) => {
+    const chosenCar = e.target.dataset.carmodel;
 
-$paintJobBonus.addEventListener("click", function () {
-  localStorage.setItem("paintJobChoice", $paintJobBonus.checked);
-  if ($paintJobBonus.checked) {
-    shoppingCartItems.push(paintJobBonus);
-    orderTotal += paintJobBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($paintJobBonus.checked === false) {
-    shoppingCartItems.pop(paintJobBonus);
-    orderTotal -= paintJobBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
+    if (chosenCar === "audiRS6") {
+      shoppingCartItems.push(audiCar);
+    } else if (chosenCar === "peugeot407") {
+      shoppingCartItems.push(peugeotCar);
+    } else if (chosenCar === "fordFocus") {
+      shoppingCartItems.push(fordCar);
+    } else if (chosenCar === "fiat500") {
+      shoppingCartItems.push(fiatCar);
+    } else if (chosenCar === "opelAstra") {
+      shoppingCartItems.push(opelCar);
+    } else if (chosenCar === "citroen2CV") {
+      shoppingCartItems.push(citroenCar);
+    } else if (chosenCar === "lotusElise") {
+      shoppingCartItems.push(lotusCar);
+    } else if (chosenCar === "lexusES") {
+      shoppingCartItems.push(lexusCar);
+    }
+    console.log(shoppingCartItems);
 
-$waxingBonus.addEventListener("click", function () {
-  localStorage.setItem("waxingChoice", $waxingBonus.checked);
-  if ($waxingBonus.checked) {
-    shoppingCartItems.push(waxingBonus);
-    orderTotal += waxingBonus.price;
+    $mainPage.style.display = "none";
+    $shoppingCartPage.style.display = "block";
+    $chosenCarName.innerText = `Wybrane auto: ${shoppingCartItems[0].name}`;
+    orderTotal += shoppingCartItems[0].price;
     $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($waxingBonus.checked === false) {
-    shoppingCartItems.pop(waxingBonus);
-    orderTotal -= waxingBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
+    loadLocalStorage();
+  });
+}
 
-$upholsteryBonus.addEventListener("click", function () {
-  localStorage.setItem("upholsteryChoice", $upholsteryBonus.checked);
-  if ($upholsteryBonus.checked) {
-    shoppingCartItems.push(upholsteryBonus);
-    orderTotal += upholsteryBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($upholsteryBonus.checked === false) {
-    shoppingCartItems.pop(upholsteryBonus);
-    orderTotal -= upholsteryBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
+for (let i = 0; i < $accessoryCheck.length; i++) {
+  $accessoryCheck[i].addEventListener("click", (e) => {
+    let chosenAccessory = e.target.dataset.accessoryname;
+    let accessoryPrice = e.target.dataset.accessoryprice;
+    let accessoryChecked = e.target.checked;
 
-$suppliesBonus.addEventListener("click", function () {
-  localStorage.setItem("suppliesChoice", $suppliesBonus.checked);
-  if ($suppliesBonus.checked) {
-    shoppingCartItems.push(cleaningSuppliesBonus);
-    orderTotal += cleaningSuppliesBonus.price;
+    if (accessoryChecked) {
+      orderTotal += Number(accessoryPrice);
+      if (chosenAccessory === "tires") {
+        shoppingCartItems.push(tiresBonus);
+      } else if (chosenAccessory === "warranty") {
+        shoppingCartItems.push(warrantyBonus);
+      } else if (chosenAccessory === "paintJob") {
+        shoppingCartItems.push(paintJobBonus);
+      } else if (chosenAccessory === "waxing") {
+        shoppingCartItems.push(waxingBonus);
+      } else if (chosenAccessory === "upholstery") {
+        shoppingCartItems.push(upholsteryBonus);
+      } else if (chosenAccessory === "cleaningSupplies") {
+        shoppingCartItems.push(cleaningSuppliesBonus);
+      } else if (chosenAccessory === "windscreenWipers") {
+        shoppingCartItems.push(windscreenWipersBonus);
+      }
+    } else {
+      orderTotal -= Number(accessoryPrice);
+      if (chosenAccessory === "tires") {
+        shoppingCartItems.pop(tiresBonus);
+      } else if (chosenAccessory === "warranty") {
+        shoppingCartItems.pop(warrantyBonus);
+      } else if (chosenAccessory === "paintJob") {
+        shoppingCartItems.pop(paintJobBonus);
+      } else if (chosenAccessory === "waxing") {
+        shoppingCartItems.pop(waxingBonus);
+      } else if (chosenAccessory === "upholstery") {
+        shoppingCartItems.pop(upholsteryBonus);
+      } else if (chosenAccessory === "cleaningSupplies") {
+        shoppingCartItems.pop(cleaningSuppliesBonus);
+      } else if (chosenAccessory === "windscreenWipers") {
+        shoppingCartItems.pop(windscreenWipersBonus);
+      }
+    }
+    console.log(shoppingCartItems);
     $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($suppliesBonus.checked === false) {
-    shoppingCartItems.pop(cleaningSuppliesBonus);
-    orderTotal -= cleaningSuppliesBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
-
-$windscreenWipersBonus.addEventListener("click", function () {
-  localStorage.setItem(
-    "windscreenWipersChoice",
-    $windscreenWipersBonus.checked
-  );
-
-  if ($windscreenWipersBonus.checked) {
-    shoppingCartItems.push(windscreenWipersBonus);
-    orderTotal += windscreenWipersBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  } else if ($windscreenWipersBonus.checked === false) {
-    shoppingCartItems.pop(windscreenWipersBonus);
-    orderTotal -= windscreenWipersBonus.price;
-    $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  }
-});
+  });
+}
 
 $backBtn.addEventListener("click", function () {
   $shoppingCartPage.style.display = "none";
@@ -332,42 +265,6 @@ $leasingInput.addEventListener("change", function () {
   localStorage.setItem("cashInput", ($cashInput.checked = false));
 });
 
-function loadLocalStorage() {
-  if (localStorage.length > 0) {
-    $tiresBonus.checked = JSON.parse(localStorage.getItem("tiresChoice"));
-    $warrantyBonus.checked = JSON.parse(localStorage.getItem("warrantyChoice"));
-    $paintJobBonus.checked = JSON.parse(localStorage.getItem("paintJobChoice"));
-    $waxingBonus.checked = JSON.parse(localStorage.getItem("waxingChoice"));
-    $upholsteryBonus.checked = JSON.parse(
-      localStorage.getItem("upholsteryChoice")
-    );
-    $suppliesBonus.checked = JSON.parse(localStorage.getItem("suppliesChoice"));
-    $windscreenWipersBonus.checked = JSON.parse(
-      localStorage.getItem("windscreenWipersChoice")
-    );
-    $buyerName.value = localStorage.getItem("buyerName");
-    $emailInput.value = localStorage.getItem("email");
-    $deliveryDate.value = localStorage.getItem("deliveryDate");
-    $deliveryAddressInput.value = localStorage.getItem("deliveryAddress");
-    $cashInput.checked = JSON.parse(localStorage.getItem("cashInput"));
-    $leasingInput.checked = JSON.parse(localStorage.getItem("leasingInput"));
-  }
-}
-
-function addCar() {
-  $mainPage.style.display = "none";
-  $shoppingCartPage.style.display = "block";
-  loadLocalStorage();
-  $chosenCarName.innerText = `Wybrane auto: ${shoppingCartItems[0].name}`;
-  orderTotal += shoppingCartItems[0].price;
-  $orderTotal.innerText = `Kwota do zapłaty: ${orderTotal}`;
-  console.log(shoppingCartItems);
-}
-
-for (let i = 0; i < $buyBtns.length; i++) {
-  $buyBtns[i].addEventListener("click", addCar);
-}
-
 function checkDate() {
   let input = $deliveryDate.value;
   let dateEntered = new Date(input);
@@ -376,10 +273,8 @@ function checkDate() {
   date.setDate(date.getDate() + 13);
 
   if (dateEntered >= date) {
-    console.log("Data poprawna");
     return true;
   } else {
-    console.log("Data bledna");
     return false;
   }
 }
@@ -404,14 +299,11 @@ function checkName() {
       firstName.length >= 3 &&
       lastName.length >= 2
     ) {
-      console.log("Imie poprawne");
       return true;
     } else {
-      console.log("Imie niepoprawne");
       return false;
     }
   } else {
-    console.log("Imie niepoprawne");
     return false;
   }
 }
@@ -424,45 +316,13 @@ function isFilled() {
     $emailInput.value.indexOf("@") !== -1 &&
     ($leasingInput.checked || $cashInput.checked)
   ) {
-    console.log("pola wypelnione");
     return true;
   } else {
-    console.log("sa puste pola");
     return false;
   }
 }
 
 function checkForm() {
-  if (checkDate() && checkName() && isFilled()) {
-    $shoppingCartPage.style.display = "none";
-    $thankYouPage.style.display = "block";
-    $carNameSummary.innerText = `Dziękujemy za zakup ${shoppingCartItems[0].name}`;
-    $chosenCarImg.setAttribute("src", shoppingCartItems[0].img);
-    $orderTotalSummary.innerText = `Zapłacono ${orderTotal} PLN`;
-    $deliveryDateSummary.innerText = `Termin dostawy: ${$deliveryDate.value}`;
-    if ($leasingInput.checked) {
-      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Leasing`;
-    } else if ($cashInput.checked) {
-      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Gotówka`;
-    }
-    $tiresBonus.checked = false;
-    $warrantyBonus.checked = false;
-    $paintJobBonus.checked = false;
-    $waxingBonus.checked = false;
-    $upholsteryBonus.checked = false;
-    $suppliesBonus.checked = false;
-    $windscreenWipersBonus.checked = false;
-    $buyerName.value = null;
-    $emailInput.value = null;
-    $deliveryAddressInput.value = null;
-    $deliveryDate.value = null;
-    $leasingInput.checked = false;
-    $cashInput.checked = false;
-    shoppingCartItems = [];
-    orderTotal = 0;
-    localStorage.clear();
-  }
-
   if (checkName() === false) {
     const nameError = document.createElement("p");
     nameError.innerText = `Proszę wprowadzić poprawne imię i nazwisko.`;
@@ -519,6 +379,20 @@ function checkForm() {
     $cashLabel.setAttribute("class", "customRadioLabel");
     $leasingLabel.setAttribute("class", "customRadioLabel");
   }
+
+  if (checkDate() && checkName() && isFilled()) {
+    $shoppingCartPage.style.display = "none";
+    $thankYouPage.style.display = "block";
+    $carNameSummary.innerText = `Dziękujemy za zakup ${shoppingCartItems[0].name}`;
+    $chosenCarImg.setAttribute("src", shoppingCartItems[0].img);
+    $orderTotalSummary.innerText = `Zapłacono ${orderTotal} PLN`;
+    $deliveryDateSummary.innerText = `Termin dostawy: ${$deliveryDate.value}`;
+    if ($leasingInput.checked) {
+      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Leasing`;
+    } else if ($cashInput.checked) {
+      $paymentMethodSummary.innerText = `Wybrana metoda płatności: Gotówka`;
+    }
+  }
 }
 
 $confirmBtn.addEventListener("click", checkForm);
@@ -526,4 +400,20 @@ $confirmBtn.addEventListener("click", checkForm);
 $mainPageBtn.addEventListener("click", function () {
   $thankYouPage.style.display = "none";
   $mainPage.style.display = "block";
+  $tiresBonus.checked = false;
+  $warrantyBonus.checked = false;
+  $paintJobBonus.checked = false;
+  $waxingBonus.checked = false;
+  $upholsteryBonus.checked = false;
+  $suppliesBonus.checked = false;
+  $windscreenWipersBonus.checked = false;
+  $buyerName.value = null;
+  $emailInput.value = null;
+  $deliveryAddressInput.value = null;
+  $deliveryDate.value = null;
+  $leasingInput.checked = false;
+  $cashInput.checked = false;
+  shoppingCartItems = [];
+  orderTotal = 0;
+  localStorage.clear();
 });

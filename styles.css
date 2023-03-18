@@ -95,7 +95,11 @@ nav {
   margin: 0 25px 0 5px;
 }
 
-#check {
+#thankYouPage#thankYouPage,
+#shoppingCart,
+#check,
+.errorHihglightRadio input,
+.customRadioLabel input {
   display: none;
 }
 
@@ -116,8 +120,7 @@ main {
   row-gap: 20px;
 }
 
-.carItem,
-.carItemSold {
+.carItem {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 225px;
@@ -138,16 +141,15 @@ main {
 
 .carName {
   font-size: 22px;
+  color: black;
 }
 
-.carItem ul li,
-.carItemSold ul li {
+.carItem ul li {
   font-size: 1.3rem;
   list-style: none;
 }
 
 .carItem img,
-.carItemSold img,
 #thankYouPage img {
   max-width: 250px;
   grid-column: 1;
@@ -163,12 +165,7 @@ main {
   margin-left: 15px;
 }
 
-.carName {
-  color: black;
-}
-
-.carPrice,
-.carPriceSold {
+.carPrice {
   grid-column: 3;
   place-self: center;
   font-size: 23px;
@@ -176,12 +173,12 @@ main {
 }
 
 .carPrice:hover {
-  color: rgba(0, 255, 0, 0.358);
+  color: rgba(0, 89, 18, 0.85);
   transition: 0.4s;
 }
 
 .carPrice:hover,
-.carPriceSold:hover {
+.carNameSummary {
   cursor: default;
 }
 
@@ -220,10 +217,6 @@ footer {
   text-align: center;
   font-style: italic;
   color: rgb(34, 34, 34);
-}
-
-#shoppingCart {
-  display: none;
 }
 
 #form {
@@ -392,11 +385,6 @@ input:checked[type="checkbox"]:before {
   align-items: center;
 }
 
-.errorHihglightRadio input,
-.customRadioLabel input {
-  display: none;
-}
-
 .errorHihglightRadio .customRadio,
 .customRadioLabel .customRadio {
   width: calc(100% - 6px);
@@ -433,10 +421,6 @@ input:checked[type="checkbox"]:before {
   box-shadow: rgba(255, 0, 0, 0.761) 0 0 5px 2px;
 }
 
-#thankYouPage {
-  display: none;
-}
-
 .summary {
   position: absolute;
   top: 50%;
@@ -454,10 +438,6 @@ input:checked[type="checkbox"]:before {
   margin: 25px 0;
   box-shadow: #415a775c 0px 0px 0px 2px, rgba(19, 39, 62, 0.65) 0px 4px 6px -1px,
     rgba(255, 255, 255, 0.214) 0px 1px 0px inset;
-}
-
-.carNameSummary {
-  cursor: default;
 }
 
 .summary p {
@@ -484,7 +464,6 @@ input:checked[type="checkbox"]:before {
   }
 
   .carPrice,
-  .carPriceSold,
   .carName {
     font-size: 22px;
   }
@@ -518,12 +497,8 @@ input:checked[type="checkbox"]:before {
     max-width: 150px;
   }
 
-  .carSpecs h2 {
-    font-size: 20px;
-  }
-
-  .carPrice,
-  .carPriceSold {
+  .carSpecs h2,
+  .carPrice {
     font-size: 20px;
   }
 
@@ -576,8 +551,7 @@ input:checked[type="checkbox"]:before {
     margin: 15px auto;
   }
 
-  .carItem,
-  .carItemSold {
+  .carItem {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -591,7 +565,8 @@ input:checked[type="checkbox"]:before {
     row-gap: 5px;
   }
 
-  .textInputLabel {
+  .textInputLabel,
+  .regularText {
     font-size: 15px;
   }
 
@@ -606,10 +581,6 @@ input:checked[type="checkbox"]:before {
 
   .accessoriesListHeader {
     font-size: 16px;
-  }
-
-  .regularText {
-    font-size: 15px;
   }
 
   #orderTotal {
@@ -639,14 +610,12 @@ input:checked[type="checkbox"]:before {
     margin: 3px;
   }
 
-  .carItem,
-  .carItemSold {
+  .carItem {
     width: 225px;
     min-height: 414px;
   }
 
   .carItem img,
-  .carItemSold img,
   #thankYouPage img {
     max-width: 200px;
     max-height: 200px;
@@ -656,7 +625,8 @@ input:checked[type="checkbox"]:before {
     font-size: 20px;
   }
 
-  .textInputLabel {
+  .textInputLabel,
+  .regularText {
     font-size: 13px;
   }
 
@@ -667,10 +637,6 @@ input:checked[type="checkbox"]:before {
 
   .accessoriesListHeader {
     font-size: 14px;
-  }
-
-  .regularText {
-    font-size: 13px;
   }
 
   #orderTotal {
@@ -723,13 +689,11 @@ input:checked[type="checkbox"]:before {
     max-height: 28px;
   }
 
-  .carItem,
-  .carItemSold {
+  .carItem {
     width: 200px;
   }
 
   .carItem img,
-  .carItemSold img,
   #thankYouPage img {
     max-width: 175px;
     max-height: 175px;
@@ -743,7 +707,8 @@ input:checked[type="checkbox"]:before {
     font-size: 18px;
   }
 
-  .textInputLabel {
+  .textInputLabel,
+  .regularText {
     font-size: 12px;
   }
 
@@ -754,10 +719,6 @@ input:checked[type="checkbox"]:before {
 
   .accessoriesListHeader {
     font-size: 13px;
-  }
-
-  .regularText {
-    font-size: 12px;
   }
 
   #orderTotal {

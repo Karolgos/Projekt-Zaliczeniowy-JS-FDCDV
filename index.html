@@ -45,7 +45,7 @@
             </ul>
           </div>
           <h3 class="carPrice">249 900 PLN</h3>
-          <button class="buyBtn" id="chooseAudiBtn">Wybierz</button>
+          <button class="buyBtn" data-carModel="audiRS6">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/407.jpg" alt="peugeotPicture" />
@@ -58,7 +58,7 @@
             </ul>
           </div>
           <h3 class="carPrice">18 999 PLN</h3>
-          <button class="buyBtn" id="choosePeugeotBtn">Wybierz</button>
+          <button class="buyBtn" id="choosePeugeotBtn" data-carModel="peugeot407">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Focus.jpg" alt="fordPicture" />
@@ -71,7 +71,7 @@
             </ul>
           </div>
           <h3 class="carPrice">40 959 PLN</h3>
-          <button class="buyBtn" id="chooseFordBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseFordBtn" data-carModel="fordFocus">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Fiat 500.jpg" alt="fiatPicture" />
@@ -84,20 +84,20 @@
             </ul>
           </div>
           <h3 class="carPrice">30 500 PLN</h3>
-          <button class="buyBtn" id="chooseFiatBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseFiatBtn" data-carModel="fiat500">Wybierz</button>
         </div>
-        <div class="carItemSold">
+        <div class="carItem carItemSold">
           <img src="./img/Mini Cooper.jpg" alt="miniPicture" />
           <div class="carSpecs">
-            <h2 class="carNameSold">Mini Cooper *NIEAKTUALNE*</h2>
+            <h2 class="carName">Mini Cooper *NIEAKTUALNE*</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 2013</li>
               <li><i class="fa-solid fa-gauge-high"></i> 122 KM</li>
               <li><i class="fa-solid fa-truck-arrow-right"></i> 90 000 km</li>
             </ul>
           </div>
-          <h3 class="carPriceSold">38 900 PLN</h3>
-          <button class="buyBtnSold" id="chooseMiniBtn">Wybierz</button>
+          <h3 class="carPrice">38 900 PLN</h3>
+          <button class="buyBtnSold">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Opel Astra.jpg" alt="opelPicture" />
@@ -110,7 +110,7 @@
             </ul>
           </div>
           <h3 class="carPrice">30 900 PLN</h3>
-          <button class="buyBtn" id="chooseOpelBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseOpelBtn" data-carModel="opelAstra">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Citroen 2CV.jpg" alt="citroenPicture" />
@@ -123,20 +123,20 @@
             </ul>
           </div>
           <h3 class="carPrice">94 000 PLN</h3>
-          <button class="buyBtn" id="chooseCitroenBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseCitroenBtn" data-carModel="citroen2CV">Wybierz</button>
         </div>
-        <div class="carItemSold">
+        <div class="carItem carItemSold">
           <img src="./img/Mazda rx7.jpg" alt="mazdaPicture" />
           <div class="carSpecs">
-            <h2 class="carNameSold">Mazda Rx-7 *NIEAKTUALNE*</h2>
+            <h2 class="carName">Mazda Rx-7 *NIEAKTUALNE*</h2>
             <ul>
               <li><i class="fa-solid fa-calendar"></i> 1999</li>
               <li><i class="fa-solid fa-gauge-high"></i> 276 KM</li>
               <li><i class="fa-solid fa-truck-arrow-right"></i> 92 000 km</li>
             </ul>
           </div>
-          <h3 class="carPriceSold">120 000 PLN</h3>
-          <button class="buyBtnSold" id="chooseMazdaBtn">Wybierz</button>
+          <h3 class="carPrice">120 000 PLN</h3>
+          <button class="buyBtnSold">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Lotus Elise.jpg" alt="lotusPicture" />
@@ -149,7 +149,7 @@
             </ul>
           </div>
           <h3 class="carPrice">69 900 PLN</h3>
-          <button class="buyBtn" id="chooseLotusBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseLotusBtn" data-carModel="lotusElise">Wybierz</button>
         </div>
         <div class="carItem">
           <img src="./img/Lexus ES.jpg" alt="lexusPicture" />
@@ -162,7 +162,7 @@
             </ul>
           </div>
           <h3 class="carPrice">199 999 PLN</h3>
-          <button class="buyBtn" id="chooseLexusBtn">Wybierz</button>
+          <button class="buyBtn" id="chooseLexusBtn" data-carModel="lexusES">Wybierz</button>
         </div>
       </main>
       <footer>&copy Karol Gospodarek 2023</footer>
@@ -196,36 +196,43 @@
               </div>
             </div>
             <h3 class="accessoriesHeader">Akcesoria</h3>
-            <h4 class="accessoriesListHeader" id="accessoriesListHeader">Dodatki i usługi
+            <h4 class="accessoriesListHeader">Dodatki i usługi
               do wyboru: </h4>
             <div class="accesoriesListInput">
               <div class="accessoryCheckbox">
                 <label class="regularText" for="tires">Opony zimowe</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="tires" data-accessoryName="tires"
+                  data-accessoryPrice="800" />
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="warranty">Dodatkowy rok gwarancji</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="warranty"
+                  data-accessoryName="warranty" data-accessoryPrice="1000" />
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="paintJob">Lakierowanie auta</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="paintJob"
+                  data-accessoryName="paintJob" data-accessoryPrice="6000" />
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="waxing">Woskowanie i usuwanie rys</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="waxing"
+                  data-accessoryName="waxing" data-accessoryPrice="250" />
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="upholstery">Wymiana tapicerki</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="upholstery"
+                  data-accessoryName="upholstery" data-accessoryPrice="7500">
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="supplies">Zestaw środków czystości AutoKar</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="supplies" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="cleaningSupplies"
+                  data-accessoryName="cleaningSupplies" data-accessoryPrice="100" />
               </div>
               <div class="accessoryCheckbox">
                 <label class="regularText" for="windscreenWipers">Wycieraczki AutoKar</label>
-                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers" />
+                <input type="checkbox" name="accesoriesList" class="accessoryItem" id="windscreenWipers"
+                  data-accessoryName="windscreenWipers" data-accessoryPrice="75" />
               </div>
             </div>
             <div class="paymentForm">

@@ -14,7 +14,7 @@ A website for buying cars from a fictional AutoKar dealership
 
 ## General Info
 
-The website is the final JavaScript project for my post-graduate fronend developer course. It strives to meet all the requirements set forth by the lecturer, with just a tiny speck of my own invention.
+The website is the final JavaScript project for my post-graduate frontend developer course. It strives to meet all the requirements set forth by the lecturer, with just a tiny speck of my own invention.
 
 ## Technologies
 
